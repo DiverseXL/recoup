@@ -1,0 +1,13 @@
+{
+  "slug": "recoup",
+  "name": "Recoup",
+  "version": "1.0.0",
+  "tagline": "Find the money you forgot you were spending.",
+  "description": "Recoup scans your Gmail for subscriptions, billing leaks, and trials, calculates your annual bleed, and defends your Calendar before you get charged.",
+  "category": "productivity",
+  "pricing_model": "free",
+  "bundled_executas": {
+    "recoup-tool": { "path": "." },
+    "recoup-playbook": { "path": "./skill/recoup-playbook" }
+  }
+}

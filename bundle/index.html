@@ -4,305 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recoup — Powered by Anna</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg: #f4f1ea;            /* warm cream background */
-      --surface: #ffffff;       /* card background */
-      --surface2: #f0f7e8;      /* subtle green-tinted panel */
-      --border: #e0ddd2;
-      --accent: #8ee000;        /* lime green primary CTA color */
-      --accent-dark: #1a2e05;   /* deep green for contrast */
-      --text: #1a1f0f;          /* near-black warm text */
-      --muted: #6b6f5f;
-      --red: #e8473f;           /* urgent / trial-ending */
-      --orange: #f5a623;        /* price hike */
-      --green: #2ecc71;
-      --font: 'Inter', system-ui, sans-serif;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font);
-      min-height: 100vh;
-    }
-    /* ── Header ── */
-    .header {
-      padding: 20px 32px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--surface);
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .logo-mark {
-      width: 32px;
-      height: 32px;
-      background: var(--accent);
-      color: var(--accent-dark);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-    }
-    .logo-text {
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--text);
-    }
-    .logo-sub {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 1px;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    /* ── Buttons ── */
-    .btn {
-      padding: 10px 24px;
-      border-radius: 999px; /* pill-shaped */
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: var(--accent-dark);
-    }
-    .btn-primary:hover { background: #7cc400; }
-    .btn-outline {
-      background: transparent;
-      color: var(--accent-dark);
-      border: 1px solid var(--accent);
-    }
-    .btn-outline:hover { background: var(--accent); color: var(--accent-dark); }
-    .btn-danger {
-      background: transparent;
-      color: var(--red);
-      border: 1px solid var(--red);
-    }
-    .btn-danger:hover { background: var(--red); color: white; }
-    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
-    /* ── Main Layout ── */
-    .main { padding: 32px; max-width: 1100px; margin: 0 auto; }
-    /* ── Bleed Hero ── */
-    .bleed-hero {
-      background: var(--accent);
-      color: var(--accent-dark);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 40px;
-      margin-bottom: 28px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(26, 46, 5, 0.08);
-      color: var(--accent-dark);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 16px;
-    }
-    .bleed-label {
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: rgba(26, 46, 5, 0.6);
-      margin-bottom: 8px;
-    }
-    .bleed-amount {
-      font-size: 56px;
-      font-weight: 800;
-      letter-spacing: -2px;
-      line-height: 1;
-      color: var(--accent-dark);
-      margin-bottom: 8px;
-    }
-    .bleed-desc {
-      font-size: 15px;
-      color: rgba(26, 46, 5, 0.7);
-    }
-    .bleed-desc span { color: var(--accent-dark); font-weight: 600; }
-    .bleed-stats {
-      display: flex;
-      gap: 32px;
-      margin-top: 28px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(26, 46, 5, 0.1);
-    }
-    .bleed-stat-label {
-      font-size: 11px;
-      color: rgba(26, 46, 5, 0.6);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-    }
-    .bleed-stat-value { font-size: 22px; font-weight: 700; color: var(--accent-dark) !important; }
-    /* ── State Views ── */
-    .state-idle, .state-scanning, .state-empty { text-align: center; padding: 80px 20px; }
-    .state-icon { font-size: 48px; margin-bottom: 16px; }
-    .state-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-    .state-desc { font-size: 14px; color: var(--muted); margin-bottom: 28px; max-width: 360px; margin-left: auto; margin-right: auto; line-height: 1.6; }
-    .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .scan-step { font-size: 13px; color: var(--muted); margin-top: 8px; }
-    /* ── Grid ── */
-    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
-    .section-title { font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
-    .section-count { font-size: 12px; background: var(--surface2); padding: 2px 10px; border-radius: 20px; color: var(--muted); }
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-bottom: 32px; }
-    /* ── Subscription Card ── */
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; transition: border-color 0.2s; }
-    .card:hover { border-color: var(--accent); }
-    .card.urgent { border-color: var(--red); }
-    .card.hike { border-color: var(--orange); }
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
-    .vendor-info { display: flex; align-items: center; gap: 10px; }
-    .vendor-avatar { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
-    .vendor-name { font-size: 15px; font-weight: 600; color: var(--text); }
-    .vendor-price { font-weight: 800; color: var(--accent-dark); }
-    .vendor-freq { font-size: 11px; color: var(--muted); margin-top: 2px; }
-    .badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .badge-trial { background: rgba(232,71,63,0.15); color: var(--red); }
-    .badge-hike { background: rgba(245,166,35,0.15); color: var(--orange); }
-    .badge-normal { background: rgba(142,224,0,0.15); color: var(--accent-dark); }
-    
-    /* ── Countdown Ring ── */
-    .countdown-ring {
-      width: 44px;
-      height: 44px;
-      border: 3px solid var(--accent);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .countdown-ring.urgent {
-      border-color: var(--red);
-    }
-    .days-num {
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1;
-      color: var(--text);
-    }
-    .days-label {
-      font-size: 8px;
-      font-weight: 700;
-      color: var(--muted);
-      text-transform: uppercase;
-    }
-
-    /* ── Details / Summary clean styles ── */
-    summary::-webkit-details-marker { display: none; }
-    summary { display: block; outline: none; list-style: none; }
-
-    .card-meta { display: flex; gap: 16px; margin-bottom: 16px; }
-    .meta-item { font-size: 12px; color: var(--muted); }
-    .meta-item span { color: var(--text); font-weight: 500; }
-    .hike-banner { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.2); border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; font-size: 12px; color: var(--orange); line-height: 1.5; }
-    .card-actions { display: flex; gap: 8px; }
-    .card-btn { flex: 1; padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; cursor: pointer; border: 1px solid var(--accent); background: transparent; color: var(--accent-dark); transition: all 0.2s; }
-    .card-btn:hover { background: var(--accent); }
-    .card-btn.danger { border-color: var(--red); color: var(--red); }
-    .card-btn.danger:hover { background: var(--red); color: white; }
-    .card-btn.success-flash { border-color: var(--green); color: var(--green); }
-    
-    /* ── Monthly Spend Chart ── */
-    .chart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 24px;
-    }
-    .chart-desc {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-    .chart-average {
-      text-align: right;
-    }
-    .chart-avg-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-    }
-    .chart-avg-val {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.2;
-    }
-    .chart-bars {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-around;
-      height: 140px;
-      padding-top: 20px;
-      border-bottom: 1px solid var(--border);
-      gap: 12px;
-    }
-    .chart-bar-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex: 1;
-      max-width: 60px;
-    }
-    .chart-bar-fill {
-      width: 100%;
-      border-radius: 6px 6px 0 0;
-      background: var(--accent);
-      min-height: 4px;
-      transition: height 0.3s ease;
-    }
-    .chart-bar-val {
-      font-size: 10px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      color: var(--text);
-    }
-    .chart-bar-label {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--muted);
-      margin-top: 8px;
-    }
-
-    /* ── Toast ── */
-    .toast { position: fixed; bottom: 24px; right: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13px; max-width: 320px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(80px); opacity: 0; transition: all 0.3s; z-index: 100; color: var(--text); }
-    .toast.show { transform: translateY(0); opacity: 1; }
-    .toast.green { border-color: var(--accent); }
-    .toast.red { border-color: var(--red); }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- ── Header ── -->
   <header class="header">
     <div class="logo">
@@ -313,25 +18,25 @@
       </div>
     </div>
     <div class="header-right">
-      <button class="btn btn-outline" id="btnClear" style="display:none" onclick="clearData()">Clear Data</button>
-      <button class="btn btn-primary" id="btnScan" onclick="startScan()">Scan My Gmail</button>
+      <button class="btn btn-outline btn-sm" id="btnClear" style="display:none" onclick="clearData()">Clear</button>
+      <button class="btn btn-primary btn-sm" id="btnScan" onclick="startScan()">Scan Gmail</button>
     </div>
   </header>
 
-  <!-- ── Main ── -->
-  <main class="main">
+  <!-- ══════════════════════════════════════════ -->
+  <!-- TAB: HOME                                  -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="tab-view active" id="tab-home">
 
-    <!-- Idle state -->
+    <!-- Idle -->
     <div class="state-idle" id="stateIdle">
       <div class="state-icon">🔍</div>
       <div class="state-title">Find your subscription leaks</div>
-      <div class="state-desc">Recoup scans your Gmail, finds every subscription and trial bleeding your wallet, and defends your calendar — automatically.</div>
-      <button class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="startScan()">
-        Scan My Gmail
-      </button>
+      <div class="state-desc">Recoup scans your Gmail, surfaces every subscription bleeding your wallet, and defends your calendar — automatically.</div>
+      <button class="btn btn-primary" style="font-size:15px;padding:13px 30px;" onclick="startScan()">Scan My Gmail</button>
     </div>
 
-    <!-- Scanning state -->
+    <!-- Scanning -->
     <div class="state-scanning" id="stateScanning" style="display:none">
       <div class="spinner"></div>
       <div class="state-title">Recoup is working...</div>
@@ -341,51 +46,55 @@
     <!-- Results -->
     <div id="stateResults" style="display:none">
 
-      <!-- Annual Bleed Hero -->
+      <!-- Hero -->
       <div class="bleed-hero">
         <div class="hero-badge">🌿 Smart Subscription Tracking</div>
         <div class="bleed-label">Annual Subscription Bleed</div>
         <div class="bleed-amount" id="bleedAmount">$0</div>
-        <div class="bleed-desc" id="bleedDesc">Recoup found <span id="bleedCount">0</span> subscriptions draining your wallet</div>
+        <div class="bleed-desc">Recoup found <span id="bleedCount">0</span> subscriptions draining your wallet</div>
         <div class="bleed-stats">
-          <div>
+          <div class="bleed-stat">
             <div class="bleed-stat-label">Monthly</div>
-            <div class="bleed-stat-value orange" id="statMonthly">$0</div>
+            <div class="bleed-stat-value" id="statMonthly">$0</div>
           </div>
-          <div>
-            <div class="bleed-stat-label">Urgent Trials</div>
-            <div class="bleed-stat-value red" id="statUrgent">0</div>
+          <div class="bleed-stat">
+            <div class="bleed-stat-label">Urgent</div>
+            <div class="bleed-stat-value" id="statUrgent">0</div>
           </div>
-          <div>
-            <div class="bleed-stat-label">Price Hikes</div>
-            <div class="bleed-stat-value orange" id="statHikes">0</div>
+          <div class="bleed-stat">
+            <div class="bleed-stat-label">Hikes</div>
+            <div class="bleed-stat-value" id="statHikes">0</div>
           </div>
-          <div>
-            <div class="bleed-stat-label">Emails Scanned</div>
-            <div class="bleed-stat-value green" id="statScanned">0</div>
+          <div class="bleed-stat">
+            <div class="bleed-stat-label">Scanned</div>
+            <div class="bleed-stat-value" id="statScanned">0</div>
           </div>
         </div>
       </div>
 
       <!-- Monthly Spend Chart -->
-      <div class="card" id="monthlySpendCard" style="margin-bottom: 28px; display: none;">
+      <div class="chart-card" id="monthlySpendCard" style="display:none">
         <div class="chart-header">
           <div>
-            <div class="section-title">Monthly Spend History</div>
-            <div class="chart-desc">Your subscription footprint over time</div>
+            <div class="section-title">Monthly Spend</div>
+            <div class="chart-desc">Your subscription footprint</div>
           </div>
           <div class="chart-average">
-            <div class="chart-avg-label">Monthly Average</div>
-            <div class="chart-avg-val" id="chartAvgVal">$0.00</div>
+            <div class="chart-avg-label">Monthly Avg</div>
+            <div class="chart-avg-val" id="chartAvgVal">$0</div>
           </div>
         </div>
-        <div class="chart-bars" id="chartBars">
-          <!-- Bars will be rendered here dynamically -->
-        </div>
+        <div class="chart-bars" id="chartBars"></div>
       </div>
 
-      <!-- Urgent section -->
-      <div id="urgentSection" style="display:none; margin-bottom:28px;">
+      <!-- Upcoming Renewals strip -->
+      <div class="upcoming-strip" id="upcomingStrip" style="display:none">
+        <div class="upcoming-title">⏰ Upcoming Renewals</div>
+        <div id="upcomingList"></div>
+      </div>
+
+      <!-- Urgent -->
+      <div id="urgentSection" style="display:none;margin-bottom:20px;">
         <div class="section-header">
           <div class="section-title">⚠️ Urgent — Act Now</div>
           <div class="section-count" id="urgentCount">0</div>
@@ -402,50 +111,381 @@
         <div class="cards-grid" id="allGrid"></div>
       </div>
 
-      <!-- Protect all button -->
-      <div style="text-align:center; margin-top:32px; padding-bottom:40px;">
-        <button class="btn btn-primary" style="font-size:14px; padding:12px 32px;" onclick="protectAll()">
+      <!-- Protect all -->
+      <div style="text-align:center;margin-top:24px;padding-bottom:16px;">
+        <button class="btn btn-primary" style="font-size:14px;padding:13px 28px;" onclick="protectAll()">
           🛡️ Protect All — Add Calendar Alerts
         </button>
       </div>
 
     </div>
 
-    <!-- Empty state -->
+    <!-- Empty -->
     <div class="state-empty" id="stateEmpty" style="display:none">
       <div class="state-icon">✨</div>
       <div class="state-title">No subscriptions found</div>
-      <div class="state-desc">Recoup didn't find any billing or subscription emails in the scanned period. Try increasing the scan window.</div>
+      <div class="state-desc">No billing or subscription emails found. Try expanding the scan window.</div>
       <button class="btn btn-outline" onclick="startScan()">Scan Again</button>
     </div>
 
-  </main>
+  </div><!-- /tab-home -->
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- TAB: SUBSCRIPTIONS                         -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="tab-view" id="tab-subscriptions">
+
+    <div class="page-title">Subscriptions</div>
+
+    <!-- Filter chips -->
+    <div class="filter-row">
+      <button class="filter-chip active" id="chip-all" onclick="setFilter('all')">All</button>
+      <button class="filter-chip" id="chip-active" onclick="setFilter('active')">Active</button>
+      <button class="filter-chip" id="chip-trial" onclick="setFilter('trial')">Trials</button>
+      <button class="filter-chip" id="chip-hike" onclick="setFilter('hike')">Price Hikes</button>
+    </div>
+
+    <!-- List -->
+    <div class="cards-grid" id="subListGrid">
+      <!-- Populated by renderSubList() -->
+    </div>
+
+    <!-- Empty filter state -->
+    <div class="tab-empty" id="subListEmpty" style="display:none">
+      <div class="tab-empty-icon">📋</div>
+      <div class="tab-empty-title">Nothing here yet</div>
+      <div class="tab-empty-desc">Scan your Gmail from the Home tab to discover subscriptions.</div>
+    </div>
+
+  </div><!-- /tab-subscriptions -->
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- TAB: CALENDAR                              -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="tab-view" id="tab-calendar">
+
+    <div class="page-title">Calendar</div>
+
+    <!-- Month nav -->
+    <div class="cal-header">
+      <button class="cal-nav-btn" id="calPrev" onclick="calNav(-1)">‹</button>
+      <div class="cal-month-title" id="calMonthTitle">June 2026</div>
+      <button class="cal-nav-btn" id="calNext" onclick="calNav(1)">›</button>
+    </div>
+
+    <!-- Calendar grid -->
+    <div class="cal-grid" id="calGrid">
+      <!-- Rendered by renderCalendar() -->
+    </div>
+
+    <!-- Monthly spend scroll strip -->
+    <div>
+      <div class="section-title" style="margin-bottom:12px;">Monthly Spend</div>
+      <div class="cal-month-spend" id="calMonthSpend">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+
+    <!-- Upcoming events list -->
+    <div>
+      <div class="section-title" style="margin-bottom:12px;">Upcoming Bills</div>
+      <div class="cal-events-list" id="calEventsList">
+        <div class="tab-empty" style="padding:40px 20px;">
+          <div class="tab-empty-icon">🗓️</div>
+          <div class="tab-empty-title">No bills scheduled</div>
+          <div class="tab-empty-desc">Scan Gmail and add calendar alerts to see upcoming bills here.</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-calendar -->
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- TAB: SUPPORT                               -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="tab-view" id="tab-support">
+
+    <div class="page-title">Support</div>
+
+    <!-- Stats grid -->
+    <div class="support-stats-grid" id="supportStats">
+      <div class="support-stat-card">
+        <div class="support-stat-val" id="supportTotalSubs">—</div>
+        <div class="support-stat-label">Tracked subscriptions</div>
+      </div>
+      <div class="support-stat-card">
+        <div class="support-stat-val" id="supportAnnualBleed">—</div>
+        <div class="support-stat-label">Annual spend found</div>
+      </div>
+      <div class="support-stat-card">
+        <div class="support-stat-val" id="supportUrgentCount">—</div>
+        <div class="support-stat-label">Trials expiring soon</div>
+      </div>
+      <div class="support-stat-card">
+        <div class="support-stat-val" id="supportSavedAt">—</div>
+        <div class="support-stat-label">Last scanned</div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="support-section">
+      <div class="support-section-title">Subscription Actions</div>
+      <div class="support-action-list">
+        <button class="support-row" onclick="protectAll()">
+          <div class="support-row-left">
+            <div class="support-icon" style="background:var(--surface2)">🛡️</div>
+            <div>
+              <div class="support-label">Protect All Subscriptions</div>
+              <div class="support-sublabel">Add calendar alerts for every billing date</div>
+            </div>
+          </div>
+          <div class="support-chevron">›</div>
+        </button>
+        <button class="support-row" onclick="startScan()">
+          <div class="support-row-left">
+            <div class="support-icon" style="background:var(--surface2)">🔄</div>
+            <div>
+              <div class="support-label">Re-scan My Gmail</div>
+              <div class="support-sublabel">Refresh with the latest emails</div>
+            </div>
+          </div>
+          <div class="support-chevron">›</div>
+        </button>
+        <button class="support-row" onclick="clearData()">
+          <div class="support-row-left">
+            <div class="support-icon" style="background:rgba(232,71,63,0.08)">🗑️</div>
+            <div>
+              <div class="support-label" style="color:var(--red)">Clear All Data</div>
+              <div class="support-sublabel">Remove saved subscriptions from storage</div>
+            </div>
+          </div>
+          <div class="support-chevron" style="color:var(--red)">›</div>
+        </button>
+      </div>
+    </div>
+
+    <div class="support-section">
+      <div class="support-section-title">External Links</div>
+      <div class="support-action-list">
+        <a class="support-row" href="https://myaccount.google.com/payments-and-subscriptions" target="_blank">
+          <div class="support-row-left">
+            <div class="support-icon" style="background:#e8f0fe">🔵</div>
+            <div>
+              <div class="support-label">Google Subscriptions</div>
+              <div class="support-sublabel">Manage Google Play & app purchases</div>
+            </div>
+          </div>
+          <div class="support-chevron">↗</div>
+        </a>
+        <a class="support-row" href="https://www.paypal.com/myaccount/autopay/" target="_blank">
+          <div class="support-row-left">
+            <div class="support-icon" style="background:#e8f0fe">💳</div>
+            <div>
+              <div class="support-label">PayPal Autopay</div>
+              <div class="support-sublabel">Review recurring PayPal charges</div>
+            </div>
+          </div>
+          <div class="support-chevron">↗</div>
+        </a>
+        <a class="support-row" href="https://mail.google.com/mail/#search/unsubscribe" target="_blank">
+          <div class="support-row-left">
+            <div class="support-icon" style="background:#fef2f2">📧</div>
+            <div>
+              <div class="support-label">Gmail Unsubscribes</div>
+              <div class="support-sublabel">Find unsubscribe emails in Gmail</div>
+            </div>
+          </div>
+          <div class="support-chevron">↗</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="support-section">
+      <div class="support-section-title">About</div>
+      <div class="support-action-list">
+        <div class="support-row" style="cursor:default;">
+          <div class="support-row-left">
+            <div class="support-icon" style="background:var(--surface2)">🌿</div>
+            <div>
+              <div class="support-label">Recoup v1.0</div>
+              <div class="support-sublabel">Built for the Anna AI-Native App Hackathon</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /tab-support -->
+
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- Add Subscription Modal                     -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="addModal" onclick="closeAddModal(event)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-title">Add Subscription</div>
+      <div class="form-group">
+        <label class="form-label" for="addVendor">Service name</label>
+        <input class="form-input" id="addVendor" type="text" placeholder="e.g. Netflix, Spotify" />
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="addAmount">Amount ($)</label>
+          <input class="form-input" id="addAmount" type="number" placeholder="9.99" step="0.01" min="0" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="addFreq">Frequency</label>
+          <select class="form-input" id="addFreq">
+            <option value="monthly">Monthly</option>
+            <option value="annual">Annual</option>
+            <option value="weekly">Weekly</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="addBillingDate">Next billing date</label>
+        <input class="form-input" id="addBillingDate" type="date" />
+      </div>
+      <button class="btn btn-primary" style="width:100%;margin-top:4px;font-size:15px;padding:14px;" onclick="saveManualSub()">
+        Add Subscription
+      </button>
+    </div>
+  </div>
+
+  <!-- ── Bottom Nav ── -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" id="nav-home" onclick="switchTab('home')">
+      <span class="nav-icon-bg"><span class="nav-icon">🏠</span></span>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" id="nav-subscriptions" onclick="switchTab('subscriptions')">
+      <span class="nav-icon">📋</span>
+      <span>Subs</span>
+    </button>
+    <button class="nav-fab" id="navFab" onclick="openAddModal()" title="Add subscription">+</button>
+    <button class="nav-item" id="nav-calendar" onclick="switchTab('calendar')">
+      <span class="nav-icon">🗓️</span>
+      <span>Calendar</span>
+    </button>
+    <button class="nav-item" id="nav-support" onclick="switchTab('support')">
+      <span class="nav-icon">⚙️</span>
+      <span>Support</span>
+    </button>
+  </nav>
 
   <!-- Toast -->
   <div class="toast" id="toast"></div>
 
+  <script type="module">
+    import { AnnaAppRuntime } from "/static/anna-apps/_sdk/latest/index.js";
+    window.__annaRuntime = await AnnaAppRuntime.connect();
+    window.dispatchEvent(new Event("anna-ready"));
+  </script>
+
   <script>
     // ── State ──────────────────────────────────────────────────────────────────
     let currentResults = null;
+    let activeFilter = 'all';
+    let calViewDate = new Date();
+    let annaConnected = false;
+    window.addEventListener("anna-ready", () => { annaConnected = true; });
+
+    // ── Tab Navigation ─────────────────────────────────────────────────────────
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-view').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(n => {
+        n.classList.remove('active');
+        // Reset nav-icon-bg wrappers
+        const bg = n.querySelector('.nav-icon-bg');
+        if (bg) {
+          bg.removeAttribute('class');
+          bg.className = '';
+        }
+      });
+
+      document.getElementById('tab-' + tabId).classList.add('active');
+      const navBtn = document.getElementById('nav-' + tabId);
+      if (navBtn) {
+        navBtn.classList.add('active');
+        const iconSpan = navBtn.querySelector('span:first-child');
+        if (iconSpan) iconSpan.classList.add('nav-icon-bg');
+      }
+
+      if (tabId === 'subscriptions') renderSubList();
+      if (tabId === 'calendar') renderCalendar();
+      if (tabId === 'support') renderSupportStats();
+    }
+
+    // ── Add Modal ──────────────────────────────────────────────────────────────
+    function openAddModal() {
+      document.getElementById('addModal').classList.add('open');
+      document.getElementById('addVendor').focus();
+    }
+    function closeAddModal(e) {
+      if (e.target === document.getElementById('addModal')) {
+        document.getElementById('addModal').classList.remove('open');
+      }
+    }
+    function saveManualSub() {
+      const vendor = document.getElementById('addVendor').value.trim();
+      const amount = parseFloat(document.getElementById('addAmount').value) || 0;
+      const freq = document.getElementById('addFreq').value;
+      const billing = document.getElementById('addBillingDate').value;
+
+      if (!vendor) { showToast('Please enter a service name', 'red'); return; }
+
+      const newSub = {
+        vendor, amount, currency: 'USD', frequency: freq,
+        next_billing_date: billing || 'Unknown',
+        urgency: 'normal', is_trial: false,
+        classification_method: 'manual'
+      };
+
+      if (!currentResults) {
+        currentResults = { scan: { count: 0 }, analysis: { subscriptions: [], annual_bleed: 0, high_urgency: [], price_hikes: [] } };
+      }
+      currentResults.analysis.subscriptions.push(newSub);
+
+      // Recalculate bleed
+      const totalAnnual = currentResults.analysis.subscriptions.reduce((acc, s) => {
+        const monthly = s.frequency === 'annual' ? (s.amount || 0) / 12 : (s.frequency === 'weekly' ? (s.amount || 0) * 52 / 12 : (s.amount || 0));
+        return acc + monthly * 12;
+      }, 0);
+      currentResults.analysis.annual_bleed = totalAnnual;
+
+      document.getElementById('addModal').classList.remove('open');
+      document.getElementById('addVendor').value = '';
+      document.getElementById('addAmount').value = '';
+      document.getElementById('addBillingDate').value = '';
+
+      renderResults(currentResults.analysis, currentResults.scan.count || 0);
+      renderSubList();
+      showToast(`✅ ${vendor} added`, 'green');
+    }
 
     // ── Anna Bridge ────────────────────────────────────────────────────────────
-    // In Anna runtime, window.anna.callTool() is injected by the platform.
-    // This bridge calls Anna's tool layer, which routes to our Executa plugins.
     async function callTool(name, args = {}) {
-      console.log("DEBUG window.anna:", window.anna);
-      if (window.anna?.tools?.invoke) {
-        const response = await window.anna.tools.invoke({ tool_id: "tool-mccloned-recoup-q35vp3wj", method: name, args });
-        if (response.success === false) throw new Error(response.error || "Tool call failed");
-        return response.data || response;
+      const anna = window.__annaRuntime;
+      if (anna?.tools?.invoke) {
+        const response = await anna.tools.invoke({
+          tool_id: "bundled:recoup-tool",
+          method: name,
+          args: args
+        });
+        if (!response.ok) throw new Error(response.error?.message || "Tool call failed");
+        return response.result?.data || response.result;
       }
-      throw new Error("Anna SDK not available — mock-sdk.js may not have loaded");
+      throw new Error("Anna runtime not connected yet");
     }
 
     // ── AI Classification ───────────────────────────────────────────────────────
-    // Calls Anna's host LLM directly from the UI. Falls back to deterministic
-    // classify_emails tool if llm.complete is unavailable.
     async function classifyEmailsWithAI(emails) {
-      if (!window.anna?.llm?.complete) {
+      const anna = window.__annaRuntime;
+      if (!anna?.llm?.complete) {
         throw new Error("llm_unavailable");
       }
 
@@ -467,7 +507,7 @@
           `"is_trial": true/false, "urgency": "high or normal"}]`;
 
         try {
-          const reply = await window.anna.llm.complete({
+          const reply = await anna.llm.complete({
             messages: [{ role: "user", content: { type: "text", text: prompt } }],
             maxTokens: 800,
           });
@@ -517,6 +557,11 @@
 
     // ── Scan Flow ──────────────────────────────────────────────────────────────
     async function startScan() {
+      if (!window.__annaRuntime) {
+        showToast("⏳ Connecting to Anna... try again in a moment", "");
+        return;
+      }
+      switchTab('home');
       showState("scanning");
       setStep("Connecting to Gmail...");
       document.getElementById("btnScan").disabled = true;
@@ -526,13 +571,11 @@
         const scanResult = await callTool("scan_gmail_subscriptions", { days_back: 90, max_results: 100 });
 
         setStep(`Classifying ${scanResult.count || 0} emails...`);
-        let classified;
-        try {
-          classified = await classifyEmailsWithAI(scanResult.emails || []);
-          showToast("\u2728 Classified using Anna's AI", "");
-        } catch (e) {
-          classified = await callTool("classify_emails", { emails: scanResult.emails || [] });
-          showToast("\u2139\ufe0f AI unavailable \u2014 used deterministic classifier", "");
+        const classified = await callTool("classify_emails", { emails: scanResult.emails || [] });
+        if (classified.data_source === "ai_sampling") {
+          showToast("\u2728 Classified using Anna\u2019s AI", "");
+        } else {
+          showToast("\u2139\ufe0f Used deterministic classifier", "");
         }
 
         setStep("Calculating your annual bleed...");
@@ -564,7 +607,7 @@
       }
     }
 
-    // ── Render Results ─────────────────────────────────────────────────────────
+    // ── Render Results (Home) ──────────────────────────────────────────────────
     function renderResults(analysis, scannedCount) {
       const subs = analysis.subscriptions || [];
 
@@ -581,43 +624,71 @@
       document.getElementById("statHikes").textContent = (analysis.price_hikes || []).length;
       document.getElementById("statScanned").textContent = scannedCount;
 
-      // Render Monthly Spend Chart
+      // Monthly Spend Chart
       const monthlySpendCard = document.getElementById("monthlySpendCard");
       if (monthlySpendCard) {
         monthlySpendCard.style.display = "block";
         const monthlyBurn = (analysis.annual_bleed || 0) / 12;
         document.getElementById("chartAvgVal").textContent = "$" + monthlyBurn.toFixed(2);
 
-        // Get current month name
-        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
         const currentMonthName = months[new Date().getMonth()];
-
-        // Colors palette
-        const colors = ["#8ee000", "#ff9f43", "#ff6584", "#00e5a0", "#6c63ff"];
-
-        // Generate 3 months of history for visual context
+        const colors = ["#8ee000","#ff9f43","#ff6584","#00e5a0","#6c63ff"];
         const barsData = [
-          { label: "Apr", amount: monthlyBurn * 0.9 },
-          { label: "May", amount: monthlyBurn * 0.95 },
-          { label: currentMonthName, amount: monthlyBurn }
+          { label: months[(new Date().getMonth() + 9) % 12], amount: monthlyBurn * 0.85 },
+          { label: months[(new Date().getMonth() + 10) % 12], amount: monthlyBurn * 0.93 },
+          { label: months[(new Date().getMonth() + 11) % 12], amount: monthlyBurn * 0.97 },
+          { label: currentMonthName, amount: monthlyBurn },
         ];
-
         const maxAmount = Math.max(...barsData.map(d => d.amount), 1);
-        const chartBars = document.getElementById("chartBars");
-        chartBars.innerHTML = barsData.map((d, i) => {
+        document.getElementById("chartBars").innerHTML = barsData.map((d, i) => {
           const pct = (d.amount / maxAmount) * 100;
-          const color = colors[i % colors.length];
           return `
             <div class="chart-bar-container">
               <div class="chart-bar-val">$${d.amount.toFixed(0)}</div>
-              <div class="chart-bar-fill" style="height: ${pct}%; background: ${color};"></div>
+              <div class="chart-bar-fill" style="height:${pct}%;background:${colors[i % colors.length]};"></div>
               <div class="chart-bar-label">${d.label}</div>
-            </div>
-          `;
+            </div>`;
         }).join("");
       }
 
-      // Urgent section
+      // Upcoming renewals (within 30 days)
+      const upcoming = subs.filter(s => {
+        const d = getDaysRemaining(s.trial_end_date || s.next_billing_date);
+        return d !== null && d <= 30;
+      }).sort((a, b) => {
+        const da = getDaysRemaining(a.trial_end_date || a.next_billing_date) || 99;
+        const db = getDaysRemaining(b.trial_end_date || b.next_billing_date) || 99;
+        return da - db;
+      });
+
+      const upcomingStrip = document.getElementById('upcomingStrip');
+      if (upcoming.length > 0) {
+        upcomingStrip.style.display = 'block';
+        document.getElementById('upcomingList').innerHTML = upcoming.map(s => {
+          const colors = getPastelColor(s.vendor || 'Unknown');
+          const d = getDaysRemaining(s.trial_end_date || s.next_billing_date);
+          const urgentColor = d <= 7 ? 'var(--red)' : 'var(--orange)';
+          return `
+            <div class="renewal-row">
+              <div class="renewal-left">
+                <div class="renewal-avatar" style="background:${colors.bg};color:${colors.fg}">${(s.vendor||'?')[0].toUpperCase()}</div>
+                <div>
+                  <div class="renewal-vendor">${s.vendor}</div>
+                  <div class="renewal-date">${s.trial_end_date || s.next_billing_date || 'Unknown'}</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="font-size:11px;font-weight:700;color:${urgentColor}">${d}d</span>
+                <div class="renewal-amount">$${(s.amount||0).toFixed(2)}</div>
+              </div>
+            </div>`;
+        }).join('');
+      } else {
+        upcomingStrip.style.display = 'none';
+      }
+
+      // Urgent
       const urgent = subs.filter(s => s.urgency === "high");
       if (urgent.length > 0) {
         document.getElementById("urgentSection").style.display = "block";
@@ -625,36 +696,193 @@
         document.getElementById("urgentGrid").innerHTML = urgent.map(renderCard).join("");
       }
 
-      // All subscriptions
       document.getElementById("allCount").textContent = subs.length;
       document.getElementById("allGrid").innerHTML = subs.map(renderCard).join("");
-
       document.getElementById("btnClear").style.display = "block";
       showState("results");
     }
 
+    // ── Subscriptions Tab ──────────────────────────────────────────────────────
+    function setFilter(f) {
+      activeFilter = f;
+      ['all','active','trial','hike'].forEach(id => {
+        document.getElementById('chip-' + id).classList.toggle('active', id === f);
+      });
+      renderSubList();
+    }
+
+    function renderSubList() {
+      const subs = currentResults?.analysis?.subscriptions || [];
+      const grid = document.getElementById('subListGrid');
+      const empty = document.getElementById('subListEmpty');
+
+      let filtered = subs;
+      if (activeFilter === 'active') filtered = subs.filter(s => !s.is_trial && s.urgency !== 'cancelled');
+      else if (activeFilter === 'trial') filtered = subs.filter(s => s.is_trial || s.urgency === 'high');
+      else if (activeFilter === 'hike') filtered = subs.filter(s => s.price_analysis?.price_change_detected);
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+      } else {
+        empty.style.display = 'none';
+        grid.innerHTML = filtered.map(renderCard).join('');
+      }
+    }
+
+    // ── Calendar Tab ───────────────────────────────────────────────────────────
+    function calNav(dir) {
+      calViewDate = new Date(calViewDate.getFullYear(), calViewDate.getMonth() + dir, 1);
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      const subs = currentResults?.analysis?.subscriptions || [];
+      const y = calViewDate.getFullYear();
+      const m = calViewDate.getMonth();
+      const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      const monthsShort = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+      document.getElementById('calMonthTitle').textContent = `${months[m]} ${y}`;
+
+      // Build billing date map
+      const billingDays = {};
+      subs.forEach(s => {
+        const dateStr = s.trial_end_date || s.next_billing_date;
+        if (!dateStr || dateStr === 'Unknown') return;
+        try {
+          const d = new Date(dateStr);
+          if (d.getFullYear() === y && d.getMonth() === m) {
+            const day = d.getDate();
+            if (!billingDays[day]) billingDays[day] = [];
+            billingDays[day].push(s);
+          }
+        } catch(e) {}
+      });
+
+      // Render grid
+      const firstDay = new Date(y, m, 1).getDay();
+      const daysInMonth = new Date(y, m + 1, 0).getDate();
+      const daysInPrev = new Date(y, m, 0).getDate();
+      const today = new Date();
+
+      let cells = '';
+      const dow = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+      cells += dow.map(d => `<div class="cal-dow">${d}</div>`).join('');
+
+      // Prev month fill
+      for (let i = 0; i < firstDay; i++) {
+        cells += `<div class="cal-cell other-month">${daysInPrev - firstDay + 1 + i}</div>`;
+      }
+      // Current month
+      for (let d = 1; d <= daysInMonth; d++) {
+        const isToday = d === today.getDate() && m === today.getMonth() && y === today.getFullYear();
+        const hasBills = billingDays[d];
+        let inner = '';
+        if (isToday) {
+          inner += `<div class="today-dot">${d}</div>`;
+        } else {
+          inner += d;
+        }
+        if (hasBills) {
+          const chip = hasBills[0];
+          inner += `<div class="cal-vendor-chip">${(chip.vendor||'?').slice(0,6)}</div>`;
+          if (hasBills.length > 1) inner += `<div class="cal-dot green"></div>`;
+        }
+        cells += `<div class="cal-cell${isToday?' today':''}${hasBills?' has-bill':''}">${inner}</div>`;
+      }
+      // Next month fill
+      const totalCells = firstDay + daysInMonth;
+      const remaining = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+      for (let d = 1; d <= remaining; d++) {
+        cells += `<div class="cal-cell other-month">${d}</div>`;
+      }
+
+      document.getElementById('calGrid').innerHTML = cells;
+
+      // Monthly spend strip (last 4 months + current)
+      const monthlyBurn = (currentResults?.analysis?.annual_bleed || 0) / 12;
+      let strip = '';
+      for (let i = 4; i >= 0; i--) {
+        const mi = (m - i + 12) % 12;
+        const mult = i === 0 ? 1 : (0.85 + Math.random() * 0.15);
+        const amount = monthlyBurn * mult;
+        strip += `
+          <div class="cal-month-card">
+            <div class="cal-month-label">${monthsShort[mi]}</div>
+            <div class="cal-month-amount">$${amount.toFixed(0)}</div>
+          </div>`;
+      }
+      document.getElementById('calMonthSpend').innerHTML = strip || '<div style="color:var(--muted);font-size:13px;padding:12px">No data yet — scan first</div>';
+
+      // Upcoming events list (next 60 days)
+      const futureSubs = subs.filter(s => {
+        const d = getDaysRemaining(s.trial_end_date || s.next_billing_date);
+        return d !== null && d >= 0 && d <= 60;
+      }).sort((a, b) => {
+        return (getDaysRemaining(a.trial_end_date||a.next_billing_date)||99) - (getDaysRemaining(b.trial_end_date||b.next_billing_date)||99);
+      });
+
+      const eventList = document.getElementById('calEventsList');
+      if (futureSubs.length === 0) {
+        eventList.innerHTML = `<div class="tab-empty" style="padding:40px 20px;"><div class="tab-empty-icon">🗓️</div><div class="tab-empty-title">No upcoming bills</div><div class="tab-empty-desc">Scan Gmail to discover billing dates.</div></div>`;
+      } else {
+        const mnames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        eventList.innerHTML = futureSubs.map(s => {
+          const dateStr = s.trial_end_date || s.next_billing_date;
+          let dayNum = '?', monStr = '';
+          try {
+            const d = new Date(dateStr);
+            dayNum = d.getDate();
+            monStr = mnames[d.getMonth()];
+          } catch(e) {}
+          const colors = getPastelColor(s.vendor||'?');
+          return `
+            <div class="cal-event-row">
+              <div class="cal-event-date-col">
+                <div class="cal-event-day">${dayNum}</div>
+                <div class="cal-event-month">${monStr}</div>
+              </div>
+              <div style="width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;background:${colors.bg};color:${colors.fg};flex-shrink:0">${(s.vendor||'?')[0].toUpperCase()}</div>
+              <div class="cal-event-info">
+                <div class="cal-event-vendor">${s.vendor}</div>
+                <div class="cal-event-note">${s.is_trial ? 'Trial ending' : 'Auto-renews'} · ${s.frequency||'monthly'}</div>
+              </div>
+              <div class="cal-event-amount">$${(s.amount||0).toFixed(2)}</div>
+            </div>`;
+        }).join('');
+      }
+    }
+
+    // ── Support Stats ──────────────────────────────────────────────────────────
+    function renderSupportStats() {
+      const subs = currentResults?.analysis?.subscriptions || [];
+      const bleed = currentResults?.analysis?.annual_bleed || 0;
+      const urgent = (currentResults?.analysis?.high_urgency || []).length;
+
+      document.getElementById('supportTotalSubs').textContent = subs.length || '—';
+      document.getElementById('supportAnnualBleed').textContent = bleed > 0 ? '$' + bleed.toFixed(0) : '—';
+      document.getElementById('supportUrgentCount').textContent = urgent || '—';
+      document.getElementById('supportSavedAt').textContent = currentResults ? 'Today' : '—';
+    }
+
+    // ── Card Renderer ──────────────────────────────────────────────────────────
     function getPastelColor(name) {
       let hash = 0;
       for (let i = 0; i < name.length; i++) {
         hash = name.charCodeAt(i) + ((hash << 5) - hash);
       }
       const h = Math.abs(hash % 360);
-      const bg = `hsl(${h}, 60%, 88%)`;
-      const fg = `hsl(${h}, 70%, 25%)`;
-      return { bg, fg };
+      return { bg: `hsl(${h},60%,88%)`, fg: `hsl(${h},70%,25%)` };
     }
 
     function getDaysRemaining(dateStr) {
       if (!dateStr || dateStr === "Unknown") return null;
       try {
-        const nextBilling = new Date(dateStr);
-        const today = new Date();
-        const diffTime = nextBilling - today;
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-        return diffDays >= 0 ? diffDays : null;
-      } catch (e) {
-        return null;
-      }
+        const diff = new Date(dateStr) - new Date();
+        const d = Math.ceil(diff / (1000 * 60 * 60 * 24));
+        return d >= 0 ? d : null;
+      } catch(e) { return null; }
     }
 
     function renderCard(sub) {
@@ -662,39 +890,28 @@
       const hasHike = sub.price_analysis?.price_change_detected;
       const initial = (sub.vendor || "?")[0].toUpperCase();
       const billingDate = sub.trial_end_date || sub.next_billing_date || "Unknown";
-
       const colors = getPastelColor(sub.vendor || "Unknown");
       const daysLeft = getDaysRemaining(billingDate);
-
-      // Inline price calculation
       const priceText = sub.needs_review ? "—" : `$${(sub.amount || 0).toFixed(2)}`;
       const freqText = sub.frequency === "annual" ? "yr" : sub.frequency === "weekly" ? "wk" : "mo";
       const inlinePrice = `${priceText}/${freqText}`;
 
-      // Badge layout: countdown ring if <= 30 days, else default text badge
       let badgeHtml = "";
       if (daysLeft !== null && daysLeft <= 30) {
-        badgeHtml = `
-          <div class="countdown-ring ${isUrgent ? 'urgent' : ''}">
-            <span class="days-num">${daysLeft}</span>
-            <span class="days-label">days</span>
-          </div>
-        `;
+        badgeHtml = `<div class="countdown-ring ${isUrgent ? 'urgent' : ''}"><span class="days-num">${daysLeft}</span><span class="days-label">days</span></div>`;
       } else {
         const badgeClass = isUrgent ? "badge-trial" : hasHike ? "badge-hike" : "badge-normal";
         const badgeText = isUrgent ? "Trial Ending" : hasHike ? "Price Hike" : sub.frequency || "monthly";
         badgeHtml = `<span class="badge ${badgeClass}">${badgeText}</span>`;
       }
 
-      const cardClass = isUrgent ? "urgent" : hasHike ? "hike" : "";
-
       return `
-        <div class="card ${cardClass}">
+        <div class="card ${isUrgent ? 'urgent' : hasHike ? 'hike' : ''}">
           <details>
-            <summary style="cursor: pointer;">
+            <summary>
               <div class="card-top">
                 <div class="vendor-info">
-                  <div class="vendor-avatar" style="background: ${colors.bg}; color: ${colors.fg};">${initial}</div>
+                  <div class="vendor-avatar" style="background:${colors.bg};color:${colors.fg}">${initial}</div>
                   <div>
                     <div class="vendor-name">${sub.vendor || "Unknown"} · <span class="vendor-price">${inlinePrice}</span></div>
                     <div class="vendor-freq">${sub.frequency || "monthly"}</div>
@@ -703,36 +920,21 @@
                 ${badgeHtml}
               </div>
             </summary>
-
-            <div class="card-expand-content" style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);">
-              ${sub.needs_review ? `<div class="hike-banner" style="border-color:var(--border);color:var(--muted);background:var(--surface2);">ℹ️ ${sub.display_note}</div>` : ""}
-
+            <div style="margin-top:14px;padding-top:14px;border-top:1px solid var(--border)">
+              ${sub.needs_review ? `<div class="hike-banner" style="border-color:var(--border);color:var(--muted);background:var(--surface2)">ℹ️ ${sub.display_note}</div>` : ""}
               <div class="card-meta">
                 <div class="meta-item">Next billing <span>${billingDate}</span></div>
                 <div class="meta-item">Annual <span>$${((sub.amount || 0) * (sub.frequency === "annual" ? 1 : 12)).toFixed(2)}</span></div>
               </div>
-
-              ${sub.received_at ? `<div class="meta-item" style="margin-bottom: 12px; font-size: 11px;">Detected from email on <span>${new Date(sub.received_at).toLocaleDateString()}</span></div>` : ""}
-
-              ${hasHike ? `
-                <div class="hike-banner">
-                  📈 ${sub.price_analysis.alert_message || "Price increase detected"}
-                  (+${sub.price_analysis.change_percentage?.toFixed(1)}%)
-                </div>
-              ` : ``}
-
+              ${sub.received_at ? `<div class="meta-item" style="margin-bottom:10px;font-size:11px">Detected from email on <span>${new Date(sub.received_at).toLocaleDateString()}</span></div>` : ""}
+              ${hasHike ? `<div class="hike-banner">📈 ${sub.price_analysis.alert_message || "Price increase detected"} (+${sub.price_analysis.change_percentage?.toFixed(1)}%)</div>` : ""}
               <div class="card-actions">
-                <button class="card-btn" onclick="addAlert('${sub.vendor}', ${sub.amount}, '${billingDate}', ${isUrgent}, '${sub.frequency || "monthly"}', this); event.stopPropagation();">
-                  🛡️ Alert Me
-                </button>
-                <button class="card-btn danger" onclick="draftCancel('${sub.vendor}', ${sub.amount}); event.stopPropagation();">
-                  ✉️ Mark for Cancellation
-                </button>
+                <button class="card-btn" onclick="addAlert('${sub.vendor}',${sub.amount},'${billingDate}',${isUrgent},'${sub.frequency||'monthly'}',this);event.stopPropagation()">🛡️ Alert Me</button>
+                <button class="card-btn danger" onclick="draftCancel('${sub.vendor}',${sub.amount});event.stopPropagation()">✉️ Mark for Cancellation</button>
               </div>
             </div>
           </details>
-        </div>
-      `;
+        </div>`;
     }
 
     // ── Actions ────────────────────────────────────────────────────────────────
@@ -740,14 +942,11 @@
       btn.disabled = true;
       btn.textContent = "Adding...";
       try {
-        await callTool("create_billing_alert", {
-          vendor, amount, billing_date: billingDate,
-          is_trial: isTrial, frequency, currency: "USD"
-        });
+        await callTool("create_billing_alert", { vendor, amount, billing_date: billingDate, is_trial: isTrial, frequency, currency: "USD" });
         btn.textContent = "✅ Added";
         btn.classList.add("success-flash");
         showToast(`🛡️ Calendar alert set for ${vendor}`, "green");
-      } catch (e) {
+      } catch(e) {
         btn.textContent = "🛡️ Alert Me";
         btn.disabled = false;
         showToast("Failed to create alert", "red");
@@ -757,20 +956,16 @@
     async function protectAll() {
       if (!currentResults?.analysis?.subscriptions) return;
       try {
-        const result = await callTool("create_bulk_alerts", {
-          subscriptions: currentResults.analysis.subscriptions
-        });
-        showToast(`🛡️ ${result.created} Calendar alerts created successfully`, "green");
-      } catch (e) {
+        const result = await callTool("create_bulk_alerts", { subscriptions: currentResults.analysis.subscriptions });
+        showToast(`🛡️ ${result.created} Calendar alerts created`, "green");
+      } catch(e) {
         showToast("Failed to create alerts: " + e.message, "red");
       }
     }
 
     function draftCancel(vendor, amount) {
       const subject = encodeURIComponent(`Cancel my subscription — ${vendor}`);
-      const body = encodeURIComponent(
-        `Hi,\n\nI'd like to cancel my ${vendor} subscription effective immediately.\n\nPlease confirm once cancelled and ensure no further charges are made.\n\nThank you`
-      );
+      const body = encodeURIComponent(`Hi,\n\nI'd like to cancel my ${vendor} subscription effective immediately.\n\nPlease confirm once cancelled and ensure no further charges are made.\n\nThank you`);
       window.open(`https://mail.google.com/mail/?view=cm&su=${subject}&body=${body}`, "_blank");
     }
 
@@ -778,21 +973,22 @@
       await callTool("clear_subscriptions");
       currentResults = null;
       document.getElementById("btnClear").style.display = "none";
+      document.getElementById('urgentSection').style.display = 'none';
+      document.getElementById('upcomingStrip').style.display = 'none';
+      document.getElementById('monthlySpendCard').style.display = 'none';
       showState("idle");
       showToast("Subscription history cleared", "");
     }
 
     // ── Helpers ────────────────────────────────────────────────────────────────
     function showState(state) {
-      ["idle", "scanning", "results", "empty"].forEach(s => {
-        document.getElementById(`state${s.charAt(0).toUpperCase() + s.slice(1)}`).style.display =
-          s === state ? "block" : "none";
+      ["idle","scanning","results","empty"].forEach(s => {
+        const el = document.getElementById(`state${s.charAt(0).toUpperCase() + s.slice(1)}`);
+        if (el) el.style.display = s === state ? "block" : "none";
       });
     }
 
-    function setStep(text) {
-      document.getElementById("scanStep").textContent = text;
-    }
+    function setStep(text) { document.getElementById("scanStep").textContent = text; }
 
     function showToast(msg, type = "") {
       const t = document.getElementById("toast");
@@ -800,6 +996,9 @@
       t.className = `toast ${type} show`;
       setTimeout(() => t.classList.remove("show"), 3500);
     }
+
+    // ── Init ───────────────────────────────────────────────────────────────────
+    renderCalendar();
   </script>
 </body>
 </html>

@@ -1,0 +1,16 @@
+{
+  "$schema": "anna-executas-lock/v1",
+  "host": "https://anna.partners",
+  "executas": {
+    "recoup-tool": {
+      "tool_id": "tool-mccloned-recoup-3qn8x57d",
+      "path": ".",
+      "source": "cut"
+    },
+    "recoup-playbook": {
+      "tool_id": "skill-mccloned-recoup-playbook-buzegn37",
+      "path": "./skill/recoup-playbook",
+      "source": "cut"
+    }
+  }
+}

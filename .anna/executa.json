@@ -1,0 +1,9 @@
+{
+  "$schema": "anna-executa-identity/v1",
+  "host": "https://anna.partners",
+  "executa_id": 1061,
+  "tool_id": "tool-mccloned-recoup-3qn8x57d",
+  "slug": "recoup",
+  "executa_type": "tool",
+  "first_published_at": "2026-06-21T21:21:44.570Z"
+}

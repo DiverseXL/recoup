@@ -1,0 +1,904 @@
+{
+    "emails":  [
+                   {
+                       "message_id":  "19eeb311501429e8",
+                       "thread_id":  "19eea27f1a5105ba",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 17:18:41 +0000 (UTC)",
+                       "received_at":  "2026-06-21T17:18:41+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 840.00 Transaction Details Account Balance: N 93775.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eea9a5279a2119",
+                       "thread_id":  "19eea27f1a5105ba",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 14:34:01 +0000 (UTC)",
+                       "received_at":  "2026-06-21T14:34:01+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 700.00 Transaction Details Account Balance: N 94626.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eea5b57e5b0f89",
+                       "thread_id":  "19eea5b57e5b0f89",
+                       "subject":  "Data Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 13:25:13 +0000 (UTC)",
+                       "received_at":  "2026-06-21T13:25:13+00:00",
+                       "snippet":  "Data Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Data purchase you made has been successfully processed, and the amount has been debited from your account. - Debit"
+                   },
+                   {
+                       "message_id":  "19eea5b5716cb1e3",
+                       "thread_id":  "19eea27f1a5105ba",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 13:25:13 +0000 (UTC)",
+                       "received_at":  "2026-06-21T13:25:13+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1000.00 Transaction Details Account Balance: N 95336.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eea4b975f26aec",
+                       "thread_id":  "19eea27f1a5105ba",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 13:08:01 +0000 (UTC)",
+                       "received_at":  "2026-06-21T13:08:01+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 2000.00 Transaction Details Account Balance: N 96337.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eea28f36b36c01",
+                       "thread_id":  "19eea27f8cd1fa18",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 12:30:11 +0000 (UTC)",
+                       "received_at":  "2026-06-21T12:30:11+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 1000.00 Transaction Details Account Balance: N 98347.34 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19eea28ee2f8012b",
+                       "thread_id":  "19eea27f1a5105ba",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 12:30:11 +0000 (UTC)",
+                       "received_at":  "2026-06-21T12:30:11+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1000.00 Transaction Details Account Balance: N 97347.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eea28e001c69bd",
+                       "thread_id":  "19eea28e001c69bd",
+                       "subject":  "Data Purchase Reversal",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 12:30:06 +0000 (UTC)",
+                       "received_at":  "2026-06-21T12:30:06+00:00",
+                       "snippet":  "Data Purchase Reversal Dear ROSELINE AKINJO, This is to notify you that your recent Data transaction on our platform was unsuccessful. As a result, we have reversed the transaction, and the funds have"
+                   },
+                   {
+                       "message_id":  "19eea27f8cd1fa18",
+                       "thread_id":  "19eea27f8cd1fa18",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 12:29:07 +0000 (UTC)",
+                       "received_at":  "2026-06-21T12:29:07+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 1000.00 Transaction Details Account Balance: N 98347.34 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19eea27f1a5105ba",
+                       "thread_id":  "19eea27f1a5105ba",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 21 Jun 2026 12:29:04 +0000 (UTC)",
+                       "received_at":  "2026-06-21T12:29:04+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1000.00 Transaction Details Account Balance: N 97347.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ee6ad4a9309768",
+                       "thread_id":  "19ee4ddcabf75318",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 20 Jun 2026 20:16:15 +0000 (UTC)",
+                       "received_at":  "2026-06-20T20:16:15+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 700.00 Transaction Details Account Balance: N 98348.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ee56a643aeb84d",
+                       "thread_id":  "19ee4ddcabf75318",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 20 Jun 2026 14:23:33 +0000 (UTC)",
+                       "received_at":  "2026-06-20T14:23:33+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 520.00 Transaction Details Account Balance: N 99058.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ee4e0a03659015",
+                       "thread_id":  "19ee4e0a03659015",
+                       "subject":  "goodshit777 mentioned you in anitya",
+                       "from":  "Discord \u003cnoreply@discord.com\u003e",
+                       "date":  "Sat, 20 Jun 2026 11:53:06 +0000 (UTC)",
+                       "received_at":  "2026-06-20T11:53:06+00:00",
+                       "snippet":  "You have 5+ new messages ≠ÉÙ˙¥¢£announcements View messages #≠É≈‡¥¢£engage (anitya) View messages #≠É∆º¥¢£chat (anitya) View messages Need help? Contact our support team or hit us up on X @discord. Want to give us"
+                   },
+                   {
+                       "message_id":  "19ee4ddcabf75318",
+                       "thread_id":  "19ee4ddcabf75318",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 20 Jun 2026 11:49:59 +0000 (UTC)",
+                       "received_at":  "2026-06-20T11:49:59+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 720.00 Transaction Details Account Balance: N 99589.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ee1188f8f69d76",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 19 Jun 2026 18:15:41 +0000 (UTC)",
+                       "received_at":  "2026-06-19T18:15:41+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 500.00 Transaction Details Account Balance: N 100320.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ee0ad1becc78e2",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 19 Jun 2026 16:18:19 +0000 (UTC)",
+                       "received_at":  "2026-06-19T16:18:19+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 920.00 Transaction Details Account Balance: N 100831.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ee033fcc690807",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 19 Jun 2026 14:06:02 +0000 (UTC)",
+                       "received_at":  "2026-06-19T14:06:02+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1900.00 Transaction Details Account Balance: N 101761.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edfb9d2e8211b9",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 19 Jun 2026 11:52:35 +0000 (UTC)",
+                       "received_at":  "2026-06-19T11:52:35+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 3500.00 Transaction Details Account Balance: N 103661.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edfb9cec831147",
+                       "thread_id":  "19edfb9cec831147",
+                       "subject":  "Airtime Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 19 Jun 2026 11:52:35 +0000 (UTC)",
+                       "received_at":  "2026-06-19T11:52:35+00:00",
+                       "snippet":  "Airtime Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Airtime purchase you made has been successfully processed, and the amount has been debited from your account. -"
+                   },
+                   {
+                       "message_id":  "19edf530f632d617",
+                       "thread_id":  "19edf530f632d617",
+                       "subject":  "ted29up mentioned you in Tatum",
+                       "from":  "Discord \u003cnoreply@discord.com\u003e",
+                       "date":  "Fri, 19 Jun 2026 10:00:22 +0000 (UTC)",
+                       "received_at":  "2026-06-19T10:00:22+00:00",
+                       "snippet":  "You have 2 new messages “‚+announcements View messages ≠ÉÙÛ“‚+announcements View messages Need help? Contact our support team or hit us up on X @discord. Want to give us feedback? Let us know what you think"
+                   },
+                   {
+                       "message_id":  "19edd95c68ace8e3",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 19 Jun 2026 01:53:59 +0000 (UTC)",
+                       "received_at":  "2026-06-19T01:53:59+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 2000.00 Transaction Details Account Balance: N 107161.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edd125a2f72638",
+                       "thread_id":  "19edd125a2f72638",
+                       "subject":  "Data Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 23:30:26 +0000 (UTC)",
+                       "received_at":  "2026-06-18T23:30:26+00:00",
+                       "snippet":  "Data Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Data purchase you made has been successfully processed, and the amount has been debited from your account. - Debit"
+                   },
+                   {
+                       "message_id":  "19edd124f71d750f",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 23:30:24 +0000 (UTC)",
+                       "received_at":  "2026-06-18T23:30:24+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 750.00 Transaction Details Account Balance: N 109171.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edca0f37a980f6",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 21:26:34 +0000 (UTC)",
+                       "received_at":  "2026-06-18T21:26:34+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 200.00 Transaction Details Account Balance: N 109922.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edc97bdb0916e2",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 21:16:30 +0000 (UTC)",
+                       "received_at":  "2026-06-18T21:16:30+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1400.00 Transaction Details Account Balance: N 110132.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edbc3eaf4b5af4",
+                       "thread_id":  "19edbc3eaf4b5af4",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 17:25:09 +0000 (UTC)",
+                       "received_at":  "2026-06-18T17:25:09+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 20000.00 Transaction Details Account Balance: N 111532.59 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19edb30887641fd7",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 14:44:10 +0000 (UTC)",
+                       "received_at":  "2026-06-18T14:44:10+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 10.00 Transaction Details Account Balance: N 91532.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edb3088655c6f7",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 14:44:10 +0000 (UTC)",
+                       "received_at":  "2026-06-18T14:44:10+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1000.00 Transaction Details Account Balance: N 91542.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edb1d50069329d",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 14:23:10 +0000 (UTC)",
+                       "received_at":  "2026-06-18T14:23:10+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1720.00 Transaction Details Account Balance: N 92543.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19edaeb6b3cc06b9",
+                       "thread_id":  "19edaeb6b3cc06b9",
+                       "subject":  "Your single-use code",
+                       "from":  "Microsoft account team \u003caccount-security-noreply@accountprotection.microsoft.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 06:28:40 -0700",
+                       "received_at":  "2026-06-18T13:28:40+00:00",
+                       "snippet":  "Hi samuelakinjo59@gmail.com, We received your request for a single-use code to use with your Microsoft account. Your single-use code is: 772983 Only enter this code on an official website or app. Don"
+                   },
+                   {
+                       "message_id":  "19edad45fd1d4afe",
+                       "thread_id":  "19edad45fd1d4afe",
+                       "subject":  "[GitHub] A third-party OAuth application has been added to your account",
+                       "from":  "GitHub \u003cnoreply@github.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 06:03:30 -0700",
+                       "received_at":  "2026-06-18T13:03:30+00:00",
+                       "snippet":  "Hey DiverseXL! A third-party OAuth application (Anna) with read:user and user:email scopes was recently authorized to access your account. Visit https://github.com/settings/connections/applications/"
+                   },
+                   {
+                       "message_id":  "19edaa5802708a90",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 12:12:18 +0000 (UTC)",
+                       "received_at":  "2026-06-18T12:12:18+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1400.00 Transaction Details Account Balance: N 94274.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eda9594d9c7420",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 11:54:55 +0000 (UTC)",
+                       "received_at":  "2026-06-18T11:54:55+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 300.00 Transaction Details Account Balance: N 95684.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eda52c43ce26d2",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 10:41:56 +0000 (UTC)",
+                       "received_at":  "2026-06-18T10:41:56+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 100.00 Transaction Details Account Balance: N 95984.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eda3ec67dd7ca5",
+                       "thread_id":  "19eda3ec67dd7ca5",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 10:20:06 +0000 (UTC)",
+                       "received_at":  "2026-06-18T10:20:06+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 410.00 Transaction Details Account Balance: N 96094.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eda02840927d81",
+                       "thread_id":  "19eda02840927d81",
+                       "subject":  "goodshit777 mentioned you in anitya",
+                       "from":  "Discord \u003cnoreply@discord.com\u003e",
+                       "date":  "Thu, 18 Jun 2026 09:14:18 +0000 (UTC)",
+                       "received_at":  "2026-06-18T09:14:18+00:00",
+                       "snippet":  "You have 1 new message #≠É≈‡¥¢£engage (anitya) View messages Need help? Contact our support team or hit us up on X @discord. Want to give us feedback? Let us know what you think on our feedback site. Enable"
+                   },
+                   {
+                       "message_id":  "19ed791e7d88e12a",
+                       "thread_id":  "19ed791e7d88e12a",
+                       "subject":  "You shared some Google Account data with Anna",
+                       "from":  "Google \u003cnoreply-accounts@google.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 14:52:03 -0700",
+                       "received_at":  "2026-06-17T21:52:03+00:00",
+                       "snippet":  "Keep track of your Google Account data samuelakinjo59@gmail.com You\u0026#39;re receiving this email because you used Sign in with Google to sign in to Anna on June 17 at 11:12 PM. This email summarizes the"
+                   },
+                   {
+                       "message_id":  "19ed78e76225b694",
+                       "thread_id":  "19ed78e76225b694",
+                       "subject":  "Security alert",
+                       "from":  "Google \u003cno-reply@accounts.google.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 21:48:17 GMT",
+                       "received_at":  "2026-06-17T21:48:17+00:00",
+                       "snippet":  "You allowed Anna access to some of your Google Account data samuelakinjo59@gmail.com If you didn\u0026#39;t allow Anna access to some of your Google Account data, someone else may be trying to access your"
+                   },
+                   {
+                       "message_id":  "19ed70bda07b6d0e",
+                       "thread_id":  "19ed70bda07b6d0e",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 19:25:38 +0000 (UTC)",
+                       "received_at":  "2026-06-17T19:25:38+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 5000.00 Transaction Details Account Balance: N 96504.84 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19ed6fbc73434345",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 19:08:03 +0000 (UTC)",
+                       "received_at":  "2026-06-17T19:08:03+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 120.00 Transaction Details Account Balance: N 91505.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ed621021db1995",
+                       "thread_id":  "19ed62081c9d3ee6",
+                       "subject":  "Airtime Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 15:09:06 +0000 (UTC)",
+                       "received_at":  "2026-06-17T15:09:06+00:00",
+                       "snippet":  "Airtime Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Airtime purchase you made has been successfully processed, and the amount has been debited from your account. -"
+                   },
+                   {
+                       "message_id":  "19ed620d22911f37",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 15:08:54 +0000 (UTC)",
+                       "received_at":  "2026-06-17T15:08:54+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 100.00 Transaction Details Account Balance: N 91635.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ed62093201a826",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 15:08:37 +0000 (UTC)",
+                       "received_at":  "2026-06-17T15:08:37+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 100.00 Transaction Details Account Balance: N 91735.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ed62081c9d3ee6",
+                       "thread_id":  "19ed62081c9d3ee6",
+                       "subject":  "Airtime Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 15:08:33 +0000 (UTC)",
+                       "received_at":  "2026-06-17T15:08:33+00:00",
+                       "snippet":  "Airtime Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Airtime purchase you made has been successfully processed, and the amount has been debited from your account. -"
+                   },
+                   {
+                       "message_id":  "19ed5ab02c84542b",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 13:00:13 +0000 (UTC)",
+                       "received_at":  "2026-06-17T13:00:13+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 4100.00 Transaction Details Account Balance: N 91835.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ed5a6f237fa60a",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 12:55:47 +0000 (UTC)",
+                       "received_at":  "2026-06-17T12:55:47+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1000.00 Transaction Details Account Balance: N 95936.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ed55b88114ea27",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 11:33:24 +0000 (UTC)",
+                       "received_at":  "2026-06-17T11:33:24+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 600.00 Transaction Details Account Balance: N 96947.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ed4b8161ae7a01",
+                       "thread_id":  "19ed4b8161ae7a01",
+                       "subject":  "goodshit777 mentioned you in anitya",
+                       "from":  "Discord \u003cnoreply@discord.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 08:34:54 +0000 (UTC)",
+                       "received_at":  "2026-06-17T08:34:54+00:00",
+                       "snippet":  "You have 2 new messages #≠É≈‡¥¢£engage (anitya) View messages ≠ÉÙÛ“‚+announcements View messages Need help? Contact our support team or hit us up on X @discord. Want to give us feedback? Let us know what you"
+                   },
+                   {
+                       "message_id":  "19ed4594f14c249e",
+                       "thread_id":  "19ed4594f14c249e",
+                       "subject":  "Matchday Deals: Never miss a World Cup match again",
+                       "from":  "Proton \u003cno-reply@offers.proton.me\u003e",
+                       "date":  "Wed, 17 Jun 2026 06:51:20 +0000 (UTC)",
+                       "received_at":  "2026-06-17T06:51:20+00:00",
+                       "snippet":  "Unlock global access with 65% off yearly plans or try it risk-free for US$1 [Proton](https://proton.me/) Never miss a World Cup match again Whether you\u0026#39;re home or away, Proton VPN helps you"
+                   },
+                   {
+                       "message_id":  "19ed420f56c66f79",
+                       "thread_id":  "19ed420f56c66f79",
+                       "subject":  "Data Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 05:49:48 +0000 (UTC)",
+                       "received_at":  "2026-06-17T05:49:48+00:00",
+                       "snippet":  "Data Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Data purchase you made has been successfully processed, and the amount has been debited from your account. - Debit"
+                   },
+                   {
+                       "message_id":  "19ed420f1c11239c",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 05:49:47 +0000 (UTC)",
+                       "received_at":  "2026-06-17T05:49:47+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1500.00 Transaction Details Account Balance: N 97557.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ed41e60bfeb1dd",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 05:46:59 +0000 (UTC)",
+                       "received_at":  "2026-06-17T05:46:59+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1100.00 Transaction Details Account Balance: N 99057.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ed41bbfd05e8b8",
+                       "thread_id":  "19ed417c2158e27d",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 05:44:07 +0000 (UTC)",
+                       "received_at":  "2026-06-17T05:44:07+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 116.00 Transaction Details Account Balance: N 100167.84 Account Number: 5786893838 Date"
+                   },
+                   {
+                       "message_id":  "19ed417c2158e27d",
+                       "thread_id":  "19ed417c2158e27d",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 05:39:46 +0000 (UTC)",
+                       "received_at":  "2026-06-17T05:39:46+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 100000.00 Transaction Details Account Balance: N 100051.84 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19ed362ff602c521",
+                       "thread_id":  "19ed362ff602c521",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Wed, 17 Jun 2026 02:22:19 +0000 (UTC)",
+                       "received_at":  "2026-06-17T02:22:19+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 100.00 Transaction Details Account Balance: N 52.59 Account Number: 5786893838 Date \u0026amp; Time"
+                   },
+                   {
+                       "message_id":  "19ed20997bbf3d3a",
+                       "thread_id":  "19ed20997bbf3d3a",
+                       "subject":  "You shared some Google Account data with FreeModel",
+                       "from":  "Google \u003cnoreply-accounts@google.com\u003e",
+                       "date":  "Tue, 16 Jun 2026 13:05:03 -0700",
+                       "received_at":  "2026-06-16T20:05:03+00:00",
+                       "snippet":  "Keep track of your Google Account data samuelakinjo59@gmail.com You\u0026#39;re receiving this email because you used Sign in with Google to sign in to FreeModel on June 16 at 3:50 PM. This email summarizes"
+                   },
+                   {
+                       "message_id":  "19ed090230fbccdb",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Tue, 16 Jun 2026 13:12:46 +0000 (UTC)",
+                       "received_at":  "2026-06-16T13:12:46+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 420.00 Transaction Details Account Balance: N 163.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecfde1fd0a268f",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Tue, 16 Jun 2026 09:58:20 +0000 (UTC)",
+                       "received_at":  "2026-06-16T09:58:20+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 10.00 Transaction Details Account Balance: N 593.34 Account Number: 5786893838 Date \u0026amp; Time"
+                   },
+                   {
+                       "message_id":  "19ecfde03234b71c",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Tue, 16 Jun 2026 09:58:13 +0000 (UTC)",
+                       "received_at":  "2026-06-16T09:58:13+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 750.00 Transaction Details Account Balance: N 603.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecfc9425f85cae",
+                       "thread_id":  "19ecfc9425f85cae",
+                       "subject":  "Security alert",
+                       "from":  "Google \u003cno-reply@accounts.google.com\u003e",
+                       "date":  "Tue, 16 Jun 2026 09:35:32 GMT",
+                       "received_at":  "2026-06-16T09:35:32+00:00",
+                       "snippet":  "A new sign-in on Windows samuelakinjo59@gmail.com We noticed a new sign-in to your Google Account on a Windows device. If this was you, you don\u0026#39;t need to do anything. If not, we\u0026#39;ll help you"
+                   },
+                   {
+                       "message_id":  "19ecfa0822c923d5",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Tue, 16 Jun 2026 08:51:03 +0000 (UTC)",
+                       "received_at":  "2026-06-16T08:51:03+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 10.00 Transaction Details Account Balance: N 1353.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecfa06a5beab27",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Tue, 16 Jun 2026 08:50:56 +0000 (UTC)",
+                       "received_at":  "2026-06-16T08:50:56+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 750.00 Transaction Details Account Balance: N 1363.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecd9c99a3495e5",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 23:27:32 +0000 (UTC)",
+                       "received_at":  "2026-06-15T23:27:32+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 10.00 Transaction Details Account Balance: N 2113.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecd9c8f7aa0272",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 23:27:29 +0000 (UTC)",
+                       "received_at":  "2026-06-15T23:27:29+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 200.00 Transaction Details Account Balance: N 2123.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecd989329fad71",
+                       "thread_id":  "19ecd989329fad71",
+                       "subject":  "New message from u/RedditResearch",
+                       "from":  "Reddit \u003cnoreply@redditmail.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 23:23:08 +0000",
+                       "received_at":  "2026-06-15T23:23:08+00:00",
+                       "snippet":  "No-Computer-3509 You have a new message from u/RedditResearch u/RedditResearch Doe mee aan Reddit-onderzoek Vul deze korte enqu+¨te in en laat ons weten wat je ervaringen zijn. Bedankt voor je tijd! -"
+                   },
+                   {
+                       "message_id":  "19ecd88b66e05403",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 23:05:48 +0000 (UTC)",
+                       "received_at":  "2026-06-15T23:05:48+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 110.00 Transaction Details Account Balance: N 2324.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eccf9415f8d5bd",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 20:29:07 +0000 (UTC)",
+                       "received_at":  "2026-06-15T20:29:07+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 810.00 Transaction Details Account Balance: N 2444.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19eccb48b9df019a",
+                       "thread_id":  "19eccb48b9df019a",
+                       "subject":  "Security alert",
+                       "from":  "Google \u003cno-reply@accounts.google.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 19:14:03 GMT",
+                       "received_at":  "2026-06-15T19:14:03+00:00",
+                       "snippet":  "A new sign-in on Windows samuelakinjo59@gmail.com We noticed a new sign-in to your Google Account on a Windows device. If this was you, you don\u0026#39;t need to do anything. If not, we\u0026#39;ll help you"
+                   },
+                   {
+                       "message_id":  "19ecc5948e71bdda",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 17:34:23 +0000 (UTC)",
+                       "received_at":  "2026-06-15T17:34:23+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 210.00 Transaction Details Account Balance: N 3264.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecbbd18e56eaef",
+                       "thread_id":  "19ecbbd18e56eaef",
+                       "subject":  "goodshit777 mentioned you in anitya",
+                       "from":  "Discord \u003cnoreply@discord.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 14:43:47 +0000 (UTC)",
+                       "received_at":  "2026-06-15T14:43:47+00:00",
+                       "snippet":  "You have 1 new message #≠É≈‡¥¢£engage (anitya) View messages Need help? Contact our support team or hit us up on X @discord. Want to give us feedback? Let us know what you think on our feedback site. Enable"
+                   },
+                   {
+                       "message_id":  "19ecb59a8842b18e",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 12:55:10 +0000 (UTC)",
+                       "received_at":  "2026-06-15T12:55:10+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 750.00 Transaction Details Account Balance: N 3474.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecb59a8041d27f",
+                       "thread_id":  "19ecb59a8041d27f",
+                       "subject":  "Data Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 12:55:10 +0000 (UTC)",
+                       "received_at":  "2026-06-15T12:55:10+00:00",
+                       "snippet":  "Data Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Data purchase you made has been successfully processed, and the amount has been debited from your account. - Debit"
+                   },
+                   {
+                       "message_id":  "19ecb5939222d05e",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 12:54:41 +0000 (UTC)",
+                       "received_at":  "2026-06-15T12:54:41+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 420.00 Transaction Details Account Balance: N 4225.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecb2d847ffebb7",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 12:06:57 +0000 (UTC)",
+                       "received_at":  "2026-06-15T12:06:57+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 250.00 Transaction Details Account Balance: N 4656.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecadfd8cb2b654",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 10:42:07 +0000 (UTC)",
+                       "received_at":  "2026-06-15T10:42:07+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 15000.00 Transaction Details Account Balance: N 4966.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecadfab892d985",
+                       "thread_id":  "19ecadfab892d985",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 10:41:55 +0000 (UTC)",
+                       "received_at":  "2026-06-15T10:41:55+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 50000.00 Transaction Details Account Balance: N 20016.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ecadd42c01ecaa",
+                       "thread_id":  "19ecadd42c01ecaa",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 10:39:17 +0000 (UTC)",
+                       "received_at":  "2026-06-15T10:39:17+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 70000.00 Transaction Details Account Balance: N 70016.34 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19eca9a72dba15fd",
+                       "thread_id":  "19eca9a72dba15fd",
+                       "subject":  "≠ÉÓÉGet to Know OPay Play4aChild!",
+                       "from":  "OPay \u003cno-reply@opay-nigeria.com\u003e",
+                       "date":  "Mon, 15 Jun 2026 14:56:19 +0530",
+                       "received_at":  "2026-06-15T09:26:19+00:00",
+                       "snippet":  "Dear valued Customer Imagine a child dreaming of going to school but without books, uniforms, a bag, shoes, or the chance to sit in a classroom. Every day, that child hopes for a brighter future ‘«ˆ and"
+                   },
+                   {
+                       "message_id":  "19ec79793fc547e9",
+                       "thread_id":  "19ec79793fc547e9",
+                       "subject":  "Data Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 14 Jun 2026 19:24:19 +0000 (UTC)",
+                       "received_at":  "2026-06-14T19:24:19+00:00",
+                       "snippet":  "Data Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Data purchase you made has been successfully processed, and the amount has been debited from your account. - Debit"
+                   },
+                   {
+                       "message_id":  "19ec79749d8805aa",
+                       "thread_id":  "19ec6950133c56f3",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 14 Jun 2026 19:23:59 +0000 (UTC)",
+                       "received_at":  "2026-06-14T19:23:59+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 350.00 Transaction Details Account Balance: N 16.34 Account Number: 5786893838 Date \u0026amp; Time"
+                   },
+                   {
+                       "message_id":  "19ec796fa54b586d",
+                       "thread_id":  "19ec796fa54b586d",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 14 Jun 2026 19:23:40 +0000 (UTC)",
+                       "received_at":  "2026-06-14T19:23:40+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 115.00 Transaction Details Account Balance: N 366.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ec6a875bd8326c",
+                       "thread_id":  "19ec6950133c56f3",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 14 Jun 2026 15:03:08 +0000 (UTC)",
+                       "received_at":  "2026-06-14T15:03:08+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 120.00 Transaction Details Account Balance: N 252.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ec6950133c56f3",
+                       "thread_id":  "19ec6950133c56f3",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sun, 14 Jun 2026 14:41:53 +0000 (UTC)",
+                       "received_at":  "2026-06-14T14:41:53+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1350.00 Transaction Details Account Balance: N 382.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ec2579f965676b",
+                       "thread_id":  "19ec07914f4ff3a2",
+                       "subject":  "Data Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 13 Jun 2026 18:56:21 +0000 (UTC)",
+                       "received_at":  "2026-06-13T18:56:21+00:00",
+                       "snippet":  "Data Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Data purchase you made has been successfully processed, and the amount has been debited from your account. - Debit"
+                   },
+                   {
+                       "message_id":  "19ec25780832bbb6",
+                       "thread_id":  "19ec079312e2ae54",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 13 Jun 2026 18:56:14 +0000 (UTC)",
+                       "received_at":  "2026-06-13T18:56:14+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 750.00 Transaction Details Account Balance: N 1742.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ec180e9794b4f0",
+                       "thread_id":  "19ec079312e2ae54",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 13 Jun 2026 15:01:50 +0000 (UTC)",
+                       "received_at":  "2026-06-13T15:01:50+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1000.00 Transaction Details Account Balance: N 2493.59 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ec17796e2f99fa",
+                       "thread_id":  "19ec176690ddc490",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 13 Jun 2026 14:51:40 +0000 (UTC)",
+                       "received_at":  "2026-06-13T14:51:40+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 230.00 Transaction Details Account Balance: N 3503.59 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19ec176690ddc490",
+                       "thread_id":  "19ec176690ddc490",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 13 Jun 2026 14:50:22 +0000 (UTC)",
+                       "received_at":  "2026-06-13T14:50:22+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 500.00 Transaction Details Account Balance: N 3273.59 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19ec103a5a7d2055",
+                       "thread_id":  "19ec079312e2ae54",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 13 Jun 2026 12:45:01 +0000 (UTC)",
+                       "received_at":  "2026-06-13T12:45:01+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 420.00 Transaction Details Account Balance: N 2774.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ec079312e2ae54",
+                       "thread_id":  "19ec079312e2ae54",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 13 Jun 2026 10:13:47 +0000 (UTC)",
+                       "received_at":  "2026-06-13T10:13:47+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 750.00 Transaction Details Account Balance: N 3204.34 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ec07914f4ff3a2",
+                       "thread_id":  "19ec07914f4ff3a2",
+                       "subject":  "Data Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Sat, 13 Jun 2026 10:13:40 +0000 (UTC)",
+                       "received_at":  "2026-06-13T10:13:40+00:00",
+                       "snippet":  "Data Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Data purchase you made has been successfully processed, and the amount has been debited from your account. - Debit"
+                   },
+                   {
+                       "message_id":  "19ebcd1106febfe4",
+                       "thread_id":  "19ebb42c274170b7",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 17:11:17 +0000 (UTC)",
+                       "received_at":  "2026-06-12T17:11:17+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 1270.00 Transaction Details Account Balance: N 3955.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ebccd51ed9364a",
+                       "thread_id":  "19ebccd51ed9364a",
+                       "subject":  "danielbressoud mentioned you in Covalent",
+                       "from":  "Discord \u003cnoreply@discord.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 17:07:11 +0000 (UTC)",
+                       "received_at":  "2026-06-12T17:07:11+00:00",
+                       "snippet":  "You have 5+ new messages ≠ÉÙÛ“‚+announcements View messages #≠É≈‡¥¢£engage (anitya) View messages ≠ÉÙ˙¥¢£announcements View messages #≠É∆º¥¢£chat (anitya) View messages Need help? Contact our support team or hit us up on"
+                   },
+                   {
+                       "message_id":  "19ebcad2c3462b64",
+                       "thread_id":  "19ebb42c274170b7",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 16:32:05 +0000 (UTC)",
+                       "received_at":  "2026-06-12T16:32:05+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 2000.00 Transaction Details Account Balance: N 5235.09 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ebbeec0ae7158a",
+                       "thread_id":  "19ebbeec0ae7158a",
+                       "subject":  "web3arc, see h.b.oodusanya, ezekwesili2000 and more in your feed",
+                       "from":  "Instagram \u003cno-reply@mail.instagram.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 06:04:01 -0700",
+                       "received_at":  "2026-06-12T13:04:01+00:00",
+                       "snippet":  "New people to discover Suggested accounts based on your interests: hboodusanya, ezekwesili2000, and 4 others. Open Instagram Suggested for you See all HB O\u0026#39;Odusanya hboodusanya View profile"
+                   },
+                   {
+                       "message_id":  "19ebba40588117bf",
+                       "thread_id":  "19ebb42c274170b7",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 11:42:28 +0000 (UTC)",
+                       "received_at":  "2026-06-12T11:42:28+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 2120.00 Transaction Details Account Balance: N 7235.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ebb5840c6be24a",
+                       "thread_id":  "19ebb5840c6be24a",
+                       "subject":  "Data Purchase Successful",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 10:19:43 +0000 (UTC)",
+                       "received_at":  "2026-06-12T10:19:43+00:00",
+                       "snippet":  "Data Purchase Successful Dear ROSELINE AKINJO, We are happy to inform you that the Data purchase you made has been successfully processed, and the amount has been debited from your account. - Debit"
+                   },
+                   {
+                       "message_id":  "19ebb5840291ea26",
+                       "thread_id":  "19ebb42c274170b7",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 10:19:42 +0000 (UTC)",
+                       "received_at":  "2026-06-12T10:19:42+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 750.00 Transaction Details Account Balance: N 9365.84 Account Number: 5786893838 Date \u0026amp;"
+                   },
+                   {
+                       "message_id":  "19ebb4d1ef8bc65a",
+                       "thread_id":  "19ebb4d1ef8bc65a",
+                       "subject":  "Credit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 10:07:33 +0000 (UTC)",
+                       "received_at":  "2026-06-12T10:07:33+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a credit transaction occurred on your account with us. Credit Amount 10000.00 Transaction Details Account Balance: N 10115.84 Account Number: 5786893838"
+                   },
+                   {
+                       "message_id":  "19ebb42c274170b7",
+                       "thread_id":  "19ebb42c274170b7",
+                       "subject":  "Debit alert!",
+                       "from":  "Moniepoint \u003cno-reply@moniepoint.com\u003e",
+                       "date":  "Fri, 12 Jun 2026 09:56:14 +0000 (UTC)",
+                       "received_at":  "2026-06-12T09:56:14+00:00",
+                       "snippet":  "Hi ROSELINE, We wish to inform you that a debit transaction occurred on your account with us. Debit Amount 10.00 Transaction Details Account Balance: N 115.84 Account Number: 5786893838 Date \u0026amp; Time"
+                   }
+               ]
+}

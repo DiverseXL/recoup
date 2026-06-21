@@ -1,0 +1,8 @@
+{
+  "$schema": "anna-app-identity/v1",
+  "host": "https://anna.partners",
+  "app_id": 120,
+  "slug": "recoup",
+  "handle": "mccloned",
+  "first_published_at": "2026-06-21T21:24:10.079Z"
+}
