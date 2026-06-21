@@ -1,0 +1,7 @@
+pyproject.toml
+recoup_plugin.py
+tool_mccloned_recoup_q35vp3wj.egg-info/PKG-INFO
+tool_mccloned_recoup_q35vp3wj.egg-info/SOURCES.txt
+tool_mccloned_recoup_q35vp3wj.egg-info/dependency_links.txt
+tool_mccloned_recoup_q35vp3wj.egg-info/entry_points.txt
+tool_mccloned_recoup_q35vp3wj.egg-info/top_level.txt

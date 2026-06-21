@@ -26,10 +26,12 @@ from executa_sdk import (
     PROTOCOL_VERSION_V2,
     SamplingClient,
     SamplingError,
+    StorageClient,
+    StorageError,
 )
 
 MANIFEST = {
-    "name": "tool-dev-recoup",
+    "name": "tool-mccloned-recoup-q35vp3wj",
     "version": "1.0.0",
     "description": "Recoup scans Gmail for subscriptions and billing leaks, "
                     "calculates annual bleed, and defends your Calendar.",
@@ -124,6 +126,7 @@ def _write_frame(msg: dict) -> None:
         sys.stdout.flush()
 
 sampling = SamplingClient(write_frame=_write_frame)
+storage = StorageClient(write_frame=_write_frame)
 
 _loop = asyncio.new_event_loop()
 _loop_thread = threading.Thread(target=_loop.run_forever, daemon=True)
@@ -544,39 +547,64 @@ def calculate_bleed(args: dict, credentials: dict) -> dict:
 # uses a local state file as a pragmatic fallback when storage isn't reachable
 # from the stdio process directly.
 
-import os
+STORAGE_KEY = "recoup:subscriptions:v1"
 
-STATE_DIR = os.path.join(os.path.expanduser("~"), ".anna", "recoup")
-STATE_FILE = os.path.join(STATE_DIR, "subscriptions.json")
+async def _save_subscriptions_async(subscriptions, annual_bleed):
+    record = {
+        "saved_at": datetime.now(timezone.utc).isoformat(),
+        "annual_bleed": annual_bleed,
+        "subscriptions": subscriptions,
+    }
+    try:
+        result = await storage.set(STORAGE_KEY, record, scope="user")
+        return {
+            "saved": True,
+            "saved_count": len(subscriptions),
+            "saved_at": record["saved_at"],
+            "storage_backend": "aps",
+            "etag": result.get("etag"),
+        }
+    except StorageError as e:
+        return {"saved": False, "error": str(e), "storage_backend": "aps_error"}
+
+
+async def _load_subscriptions_async():
+    try:
+        result = await storage.get(STORAGE_KEY, scope="user")
+        if result is None or result.get("value") is None:
+            return {"found": False, "subscriptions": [], "annual_bleed": 0, "storage_backend": "aps"}
+        record = result["value"]
+        return {
+            "found": True,
+            "subscriptions": record.get("subscriptions", []),
+            "annual_bleed": record.get("annual_bleed", 0),
+            "saved_at": record.get("saved_at"),
+            "storage_backend": "aps",
+        }
+    except StorageError as e:
+        return {"found": False, "subscriptions": [], "annual_bleed": 0, "error": str(e), "storage_backend": "aps_error"}
 
 
 def save_subscriptions(args: dict, credentials: dict) -> dict:
-    os.makedirs(STATE_DIR, exist_ok=True)
-    record = {
-        "saved_at": datetime.now(timezone.utc).isoformat(),
-        "annual_bleed": args.get("annual_bleed", 0),
-        "subscriptions": args.get("subscriptions", []),
-    }
-    with open(STATE_FILE, "w", encoding="utf-8") as f:
-        json.dump(record, f)
-    return {"success": True, "data": {
-        "saved": True,
-        "saved_count": len(record["subscriptions"]),
-        "saved_at": record["saved_at"],
-    }}
+    subscriptions = args.get("subscriptions", [])
+    annual_bleed = args.get("annual_bleed", 0)
+    fut = asyncio.run_coroutine_threadsafe(
+        _save_subscriptions_async(subscriptions, annual_bleed), _loop
+    )
+    try:
+        result = fut.result(timeout=35.0)
+        return {"success": result.get("saved", False), "data": result}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
 
 
 def load_subscriptions(args: dict, credentials: dict) -> dict:
-    if not os.path.exists(STATE_FILE):
-        return {"success": True, "data": {"found": False, "subscriptions": [], "annual_bleed": 0}}
-    with open(STATE_FILE, "r", encoding="utf-8") as f:
-        record = json.load(f)
-    return {"success": True, "data": {
-        "found": True,
-        "subscriptions": record.get("subscriptions", []),
-        "annual_bleed": record.get("annual_bleed", 0),
-        "saved_at": record.get("saved_at"),
-    }}
+    fut = asyncio.run_coroutine_threadsafe(_load_subscriptions_async(), _loop)
+    try:
+        result = fut.result(timeout=35.0)
+        return {"success": True, "data": result}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
 
 
 # ─── Google Calendar ────────────────────────────────────────────────────────
@@ -689,10 +717,10 @@ def main() -> None:
         method = req.get("method")
         req_id = req.get("id")
 
-        # Reverse-RPC reply from host -> resolve a pending sampling future
+        # Reverse-RPC reply from host -> resolve a pending sampling or storage future
         if method is None and req_id is not None and ("result" in req or "error" in req):
             if not sampling.dispatch_response(req):
-                pass
+                storage.dispatch_response(req)
             return
 
         try:

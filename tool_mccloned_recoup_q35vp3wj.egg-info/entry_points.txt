@@ -1,0 +1,2 @@
+[console_scripts]
+tool-mccloned-recoup-q35vp3wj = recoup_plugin:main

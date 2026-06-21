@@ -1,0 +1,5 @@
+Metadata-Version: 2.4
+Name: tool-mccloned-recoup-q35vp3wj
+Version: 1.0.0
+Summary: Recoup scans Gmail for subscriptions and billing leaks, calculates annual bleed, and defends your Calendar.
+Requires-Python: >=3.10

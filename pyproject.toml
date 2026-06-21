@@ -1,0 +1,16 @@
+[project]
+name = "tool-mccloned-recoup-q35vp3wj"
+version = "1.0.0"
+description = "Recoup scans Gmail for subscriptions and billing leaks, calculates annual bleed, and defends your Calendar."
+requires-python = ">=3.10"
+
+[project.scripts]
+"tool-mccloned-recoup-q35vp3wj" = "recoup_plugin:main"
+
+[tool.uv]
+package = true
+
+
+[tool.setuptools]
+py-modules = ["recoup_plugin"]
+

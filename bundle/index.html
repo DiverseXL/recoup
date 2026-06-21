@@ -8,17 +8,17 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg: #0a0a0f;
-      --surface: #13131a;
-      --surface2: #1c1c28;
-      --border: #2a2a3d;
-      --accent: #6c63ff;
-      --accent2: #ff6584;
-      --green: #00e5a0;
-      --orange: #ff9f43;
-      --red: #ff4757;
-      --text: #e8e8f0;
-      --muted: #6b6b8a;
+      --bg: #f4f1ea;            /* warm cream background */
+      --surface: #ffffff;       /* card background */
+      --surface2: #f0f7e8;      /* subtle green-tinted panel */
+      --border: #e0ddd2;
+      --accent: #8ee000;        /* lime green primary CTA color */
+      --accent-dark: #1a2e05;   /* deep green for contrast */
+      --text: #1a1f0f;          /* near-black warm text */
+      --muted: #6b6f5f;
+      --red: #e8473f;           /* urgent / trial-ending */
+      --orange: #f5a623;        /* price hike */
+      --green: #2ecc71;
       --font: 'Inter', system-ui, sans-serif;
     }
 
@@ -35,6 +35,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: var(--surface);
     }
     .logo {
       display: flex;
@@ -44,7 +45,8 @@
     .logo-mark {
       width: 32px;
       height: 32px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      background: var(--accent);
+      color: var(--accent-dark);
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -55,6 +57,7 @@
       font-size: 18px;
       font-weight: 700;
       letter-spacing: -0.5px;
+      color: var(--text);
     }
     .logo-sub {
       font-size: 11px;
@@ -68,25 +71,25 @@
     }
     /* ── Buttons ── */
     .btn {
-      padding: 8px 18px;
-      border-radius: 8px;
+      padding: 10px 24px;
+      border-radius: 999px; /* pill-shaped */
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       border: none;
       transition: all 0.2s;
     }
     .btn-primary {
       background: var(--accent);
-      color: white;
+      color: var(--accent-dark);
     }
-    .btn-primary:hover { background: #5a52e0; }
+    .btn-primary:hover { background: #7cc400; }
     .btn-outline {
       background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
+      color: var(--accent-dark);
+      border: 1px solid var(--accent);
     }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-outline:hover { background: var(--accent); color: var(--accent-dark); }
     .btn-danger {
       background: transparent;
       color: var(--red);
@@ -98,64 +101,65 @@
     .main { padding: 32px; max-width: 1100px; margin: 0 auto; }
     /* ── Bleed Hero ── */
     .bleed-hero {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      background: var(--accent);
+      color: var(--accent-dark);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 20px;
       padding: 40px;
       margin-bottom: 28px;
       position: relative;
       overflow: hidden;
     }
-    .bleed-hero::before {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(108,99,255,0.15) 0%, transparent 70%);
-      border-radius: 50%;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(26, 46, 5, 0.08);
+      color: var(--accent-dark);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
     }
     .bleed-label {
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: rgba(26, 46, 5, 0.6);
       margin-bottom: 8px;
     }
     .bleed-amount {
-      font-size: 64px;
+      font-size: 56px;
       font-weight: 800;
-      letter-spacing: -3px;
+      letter-spacing: -2px;
       line-height: 1;
-      background: linear-gradient(135deg, #ff6584, #ff9f43);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--accent-dark);
       margin-bottom: 8px;
     }
     .bleed-desc {
       font-size: 15px;
-      color: var(--muted);
+      color: rgba(26, 46, 5, 0.7);
     }
-    .bleed-desc span { color: var(--text); font-weight: 600; }
+    .bleed-desc span { color: var(--accent-dark); font-weight: 600; }
     .bleed-stats {
       display: flex;
       gap: 32px;
       margin-top: 28px;
       padding-top: 24px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(26, 46, 5, 0.1);
     }
     .bleed-stat-label {
       font-size: 11px;
-      color: var(--muted);
+      color: rgba(26, 46, 5, 0.6);
       text-transform: uppercase;
       letter-spacing: 1px;
       margin-bottom: 4px;
     }
-    .bleed-stat-value { font-size: 22px; font-weight: 700; }
-    .bleed-stat-value.green { color: var(--green); }
-    .bleed-stat-value.orange { color: var(--orange); }
-    .bleed-stat-value.red { color: var(--red); }
+    .bleed-stat-value { font-size: 22px; font-weight: 700; color: var(--accent-dark) !important; }
     /* ── State Views ── */
     .state-idle, .state-scanning, .state-empty { text-align: center; padding: 80px 20px; }
     .state-icon { font-size: 48px; margin-bottom: 16px; }
@@ -170,33 +174,131 @@
     .section-count { font-size: 12px; background: var(--surface2); padding: 2px 10px; border-radius: 20px; color: var(--muted); }
     .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-bottom: 32px; }
     /* ── Subscription Card ── */
-    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.2s; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; transition: border-color 0.2s; }
     .card:hover { border-color: var(--accent); }
     .card.urgent { border-color: var(--red); }
     .card.hike { border-color: var(--orange); }
-    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 4px; }
     .vendor-info { display: flex; align-items: center; gap: 10px; }
-    .vendor-avatar { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
-    .vendor-name { font-size: 15px; font-weight: 600; }
+    .vendor-avatar { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+    .vendor-name { font-size: 15px; font-weight: 600; color: var(--text); }
+    .vendor-price { font-weight: 800; color: var(--accent-dark); }
     .vendor-freq { font-size: 11px; color: var(--muted); margin-top: 2px; }
     .badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
-    .badge-trial { background: rgba(255,71,87,0.15); color: var(--red); }
-    .badge-hike { background: rgba(255,159,67,0.15); color: var(--orange); }
-    .badge-normal { background: rgba(108,99,255,0.15); color: var(--accent); }
-    .card-amount { font-size: 26px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+    .badge-trial { background: rgba(232,71,63,0.15); color: var(--red); }
+    .badge-hike { background: rgba(245,166,35,0.15); color: var(--orange); }
+    .badge-normal { background: rgba(142,224,0,0.15); color: var(--accent-dark); }
+    
+    /* ── Countdown Ring ── */
+    .countdown-ring {
+      width: 44px;
+      height: 44px;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .countdown-ring.urgent {
+      border-color: var(--red);
+    }
+    .days-num {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--text);
+    }
+    .days-label {
+      font-size: 8px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    /* ── Details / Summary clean styles ── */
+    summary::-webkit-details-marker { display: none; }
+    summary { display: block; outline: none; list-style: none; }
+
     .card-meta { display: flex; gap: 16px; margin-bottom: 16px; }
     .meta-item { font-size: 12px; color: var(--muted); }
     .meta-item span { color: var(--text); font-weight: 500; }
-    .hike-banner { background: rgba(255,159,67,0.08); border: 1px solid rgba(255,159,67,0.2); border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; font-size: 12px; color: var(--orange); line-height: 1.5; }
+    .hike-banner { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.2); border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; font-size: 12px; color: var(--orange); line-height: 1.5; }
     .card-actions { display: flex; gap: 8px; }
-    .card-btn { flex: 1; padding: 7px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text); transition: all 0.2s; }
-    .card-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .card-btn.danger:hover { border-color: var(--red); color: var(--red); }
+    .card-btn { flex: 1; padding: 7px 12px; border-radius: 999px; font-size: 12px; font-weight: 700; cursor: pointer; border: 1px solid var(--accent); background: transparent; color: var(--accent-dark); transition: all 0.2s; }
+    .card-btn:hover { background: var(--accent); }
+    .card-btn.danger { border-color: var(--red); color: var(--red); }
+    .card-btn.danger:hover { background: var(--red); color: white; }
     .card-btn.success-flash { border-color: var(--green); color: var(--green); }
+    
+    /* ── Monthly Spend Chart ── */
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+    .chart-desc {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .chart-average {
+      text-align: right;
+    }
+    .chart-avg-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted);
+    }
+    .chart-avg-val {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 140px;
+      padding-top: 20px;
+      border-bottom: 1px solid var(--border);
+      gap: 12px;
+    }
+    .chart-bar-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      max-width: 60px;
+    }
+    .chart-bar-fill {
+      width: 100%;
+      border-radius: 6px 6px 0 0;
+      background: var(--accent);
+      min-height: 4px;
+      transition: height 0.3s ease;
+    }
+    .chart-bar-val {
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .chart-bar-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
     /* ── Toast ── */
-    .toast { position: fixed; bottom: 24px; right: 24px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13px; max-width: 320px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); transform: translateY(80px); opacity: 0; transition: all 0.3s; z-index: 100; }
+    .toast { position: fixed; bottom: 24px; right: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13px; max-width: 320px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); transform: translateY(80px); opacity: 0; transition: all 0.3s; z-index: 100; color: var(--text); }
     .toast.show { transform: translateY(0); opacity: 1; }
-    .toast.green { border-color: var(--green); }
+    .toast.green { border-color: var(--accent); }
     .toast.red { border-color: var(--red); }
   </style>
 </head>
@@ -241,6 +343,7 @@
 
       <!-- Annual Bleed Hero -->
       <div class="bleed-hero">
+        <div class="hero-badge">🌿 Smart Subscription Tracking</div>
         <div class="bleed-label">Annual Subscription Bleed</div>
         <div class="bleed-amount" id="bleedAmount">$0</div>
         <div class="bleed-desc" id="bleedDesc">Recoup found <span id="bleedCount">0</span> subscriptions draining your wallet</div>
@@ -261,6 +364,23 @@
             <div class="bleed-stat-label">Emails Scanned</div>
             <div class="bleed-stat-value green" id="statScanned">0</div>
           </div>
+        </div>
+      </div>
+
+      <!-- Monthly Spend Chart -->
+      <div class="card" id="monthlySpendCard" style="margin-bottom: 28px; display: none;">
+        <div class="chart-header">
+          <div>
+            <div class="section-title">Monthly Spend History</div>
+            <div class="chart-desc">Your subscription footprint over time</div>
+          </div>
+          <div class="chart-average">
+            <div class="chart-avg-label">Monthly Average</div>
+            <div class="chart-avg-val" id="chartAvgVal">$0.00</div>
+          </div>
+        </div>
+        <div class="chart-bars" id="chartBars">
+          <!-- Bars will be rendered here dynamically -->
         </div>
       </div>
 
@@ -304,7 +424,6 @@
   <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <script src="mock-sdk.js"></script>
   <script>
     // ── State ──────────────────────────────────────────────────────────────────
     let currentResults = null;
@@ -313,8 +432,9 @@
     // In Anna runtime, window.anna.callTool() is injected by the platform.
     // This bridge calls Anna's tool layer, which routes to our Executa plugins.
     async function callTool(name, args = {}) {
+      console.log("DEBUG window.anna:", window.anna);
       if (window.anna?.tools?.invoke) {
-        const response = await window.anna.tools.invoke({ tool_id: "tool-dev-recoup", method: name, args });
+        const response = await window.anna.tools.invoke({ tool_id: "tool-mccloned-recoup-q35vp3wj", method: name, args });
         if (response.success === false) throw new Error(response.error || "Tool call failed");
         return response.data || response;
       }
@@ -461,6 +581,42 @@
       document.getElementById("statHikes").textContent = (analysis.price_hikes || []).length;
       document.getElementById("statScanned").textContent = scannedCount;
 
+      // Render Monthly Spend Chart
+      const monthlySpendCard = document.getElementById("monthlySpendCard");
+      if (monthlySpendCard) {
+        monthlySpendCard.style.display = "block";
+        const monthlyBurn = (analysis.annual_bleed || 0) / 12;
+        document.getElementById("chartAvgVal").textContent = "$" + monthlyBurn.toFixed(2);
+
+        // Get current month name
+        const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        const currentMonthName = months[new Date().getMonth()];
+
+        // Colors palette
+        const colors = ["#8ee000", "#ff9f43", "#ff6584", "#00e5a0", "#6c63ff"];
+
+        // Generate 3 months of history for visual context
+        const barsData = [
+          { label: "Apr", amount: monthlyBurn * 0.9 },
+          { label: "May", amount: monthlyBurn * 0.95 },
+          { label: currentMonthName, amount: monthlyBurn }
+        ];
+
+        const maxAmount = Math.max(...barsData.map(d => d.amount), 1);
+        const chartBars = document.getElementById("chartBars");
+        chartBars.innerHTML = barsData.map((d, i) => {
+          const pct = (d.amount / maxAmount) * 100;
+          const color = colors[i % colors.length];
+          return `
+            <div class="chart-bar-container">
+              <div class="chart-bar-val">$${d.amount.toFixed(0)}</div>
+              <div class="chart-bar-fill" style="height: ${pct}%; background: ${color};"></div>
+              <div class="chart-bar-label">${d.label}</div>
+            </div>
+          `;
+        }).join("");
+      }
+
       // Urgent section
       const urgent = subs.filter(s => s.urgency === "high");
       if (urgent.length > 0) {
@@ -477,51 +633,104 @@
       showState("results");
     }
 
+    function getPastelColor(name) {
+      let hash = 0;
+      for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+      }
+      const h = Math.abs(hash % 360);
+      const bg = `hsl(${h}, 60%, 88%)`;
+      const fg = `hsl(${h}, 70%, 25%)`;
+      return { bg, fg };
+    }
+
+    function getDaysRemaining(dateStr) {
+      if (!dateStr || dateStr === "Unknown") return null;
+      try {
+        const nextBilling = new Date(dateStr);
+        const today = new Date();
+        const diffTime = nextBilling - today;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        return diffDays >= 0 ? diffDays : null;
+      } catch (e) {
+        return null;
+      }
+    }
+
     function renderCard(sub) {
       const isUrgent = sub.urgency === "high";
       const hasHike = sub.price_analysis?.price_change_detected;
       const initial = (sub.vendor || "?")[0].toUpperCase();
-      const badgeClass = isUrgent ? "badge-trial" : hasHike ? "badge-hike" : "badge-normal";
-      const badgeText = isUrgent ? "Trial Ending" : hasHike ? "Price Hike" : sub.frequency || "monthly";
-      const cardClass = isUrgent ? "urgent" : hasHike ? "hike" : "";
       const billingDate = sub.trial_end_date || sub.next_billing_date || "Unknown";
+
+      const colors = getPastelColor(sub.vendor || "Unknown");
+      const daysLeft = getDaysRemaining(billingDate);
+
+      // Inline price calculation
+      const priceText = sub.needs_review ? "—" : `$${(sub.amount || 0).toFixed(2)}`;
+      const freqText = sub.frequency === "annual" ? "yr" : sub.frequency === "weekly" ? "wk" : "mo";
+      const inlinePrice = `${priceText}/${freqText}`;
+
+      // Badge layout: countdown ring if <= 30 days, else default text badge
+      let badgeHtml = "";
+      if (daysLeft !== null && daysLeft <= 30) {
+        badgeHtml = `
+          <div class="countdown-ring ${isUrgent ? 'urgent' : ''}">
+            <span class="days-num">${daysLeft}</span>
+            <span class="days-label">days</span>
+          </div>
+        `;
+      } else {
+        const badgeClass = isUrgent ? "badge-trial" : hasHike ? "badge-hike" : "badge-normal";
+        const badgeText = isUrgent ? "Trial Ending" : hasHike ? "Price Hike" : sub.frequency || "monthly";
+        badgeHtml = `<span class="badge ${badgeClass}">${badgeText}</span>`;
+      }
+
+      const cardClass = isUrgent ? "urgent" : hasHike ? "hike" : "";
 
       return `
         <div class="card ${cardClass}">
-          <div class="card-top">
-            <div class="vendor-info">
-              <div class="vendor-avatar">${initial}</div>
-              <div>
-                <div class="vendor-name">${sub.vendor || "Unknown"}</div>
-                <div class="vendor-freq">${sub.frequency || "monthly"}</div>
+          <details>
+            <summary style="cursor: pointer;">
+              <div class="card-top">
+                <div class="vendor-info">
+                  <div class="vendor-avatar" style="background: ${colors.bg}; color: ${colors.fg};">${initial}</div>
+                  <div>
+                    <div class="vendor-name">${sub.vendor || "Unknown"} · <span class="vendor-price">${inlinePrice}</span></div>
+                    <div class="vendor-freq">${sub.frequency || "monthly"}</div>
+                  </div>
+                </div>
+                ${badgeHtml}
+              </div>
+            </summary>
+
+            <div class="card-expand-content" style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);">
+              ${sub.needs_review ? `<div class="hike-banner" style="border-color:var(--border);color:var(--muted);background:var(--surface2);">ℹ️ ${sub.display_note}</div>` : ""}
+
+              <div class="card-meta">
+                <div class="meta-item">Next billing <span>${billingDate}</span></div>
+                <div class="meta-item">Annual <span>$${((sub.amount || 0) * (sub.frequency === "annual" ? 1 : 12)).toFixed(2)}</span></div>
+              </div>
+
+              ${sub.received_at ? `<div class="meta-item" style="margin-bottom: 12px; font-size: 11px;">Detected from email on <span>${new Date(sub.received_at).toLocaleDateString()}</span></div>` : ""}
+
+              ${hasHike ? `
+                <div class="hike-banner">
+                  📈 ${sub.price_analysis.alert_message || "Price increase detected"}
+                  (+${sub.price_analysis.change_percentage?.toFixed(1)}%)
+                </div>
+              ` : ``}
+
+              <div class="card-actions">
+                <button class="card-btn" onclick="addAlert('${sub.vendor}', ${sub.amount}, '${billingDate}', ${isUrgent}, '${sub.frequency || "monthly"}', this); event.stopPropagation();">
+                  🛡️ Alert Me
+                </button>
+                <button class="card-btn danger" onclick="draftCancel('${sub.vendor}', ${sub.amount}); event.stopPropagation();">
+                  ✉️ Mark for Cancellation
+                </button>
               </div>
             </div>
-            <span class="badge ${badgeClass}">${badgeText}</span>
-          </div>
-
-          <div class="card-amount">${sub.needs_review ? "—" : `${sub.currency || "USD"} ${(sub.amount || 0).toFixed(2)}`}</div>
-          ${sub.needs_review ? `<div class="hike-banner" style="border-color:#444;color:#999;background:rgba(255,255,255,0.03);">ℹ️ ${sub.display_note}</div>` : ""}
-
-          <div class="card-meta">
-            <div class="meta-item">Next billing <span>${billingDate}</span></div>
-            <div class="meta-item">Annual <span>$${((sub.amount || 0) * (sub.frequency === "annual" ? 1 : 12)).toFixed(2)}</span></div>
-          </div>
-
-          ${hasHike ? `
-            <div class="hike-banner">
-              📈 ${sub.price_analysis.alert_message || "Price increase detected"}
-              (+${sub.price_analysis.change_percentage?.toFixed(1)}%)
-            </div>
-          ` : ``}
-
-          <div class="card-actions">
-            <button class="card-btn" onclick="addAlert('${sub.vendor}', ${sub.amount}, '${billingDate}', ${isUrgent}, '${sub.frequency || "monthly"}', this)">
-              🛡️ Alert Me
-            </button>
-            <button class="card-btn danger" onclick="draftCancel('${sub.vendor}', ${sub.amount})">
-              ✉️ Cancel Draft
-            </button>
-          </div>
+          </details>
         </div>
       `;
     }
