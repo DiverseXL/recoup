@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recoup — Powered by Anna</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #13131a;
+      --surface2: #1c1c28;
+      --border: #2a2a3d;
+      --accent: #6c63ff;
+      --accent2: #ff6584;
+      --green: #00e5a0;
+      --orange: #ff9f43;
+      --red: #ff4757;
+      --text: #e8e8f0;
+      --muted: #6b6b8a;
+      --font: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+    }
+    /* ── Header ── */
+    .header {
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+    }
+    .logo-text {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .logo-sub {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    /* ── Buttons ── */
+    .btn {
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-primary:hover { background: #5a52e0; }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-danger {
+      background: transparent;
+      color: var(--red);
+      border: 1px solid var(--red);
+    }
+    .btn-danger:hover { background: var(--red); color: white; }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    /* ── Main Layout ── */
+    .main { padding: 32px; max-width: 1100px; margin: 0 auto; }
+    /* ── Bleed Hero ── */
+    .bleed-hero {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .bleed-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(108,99,255,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .bleed-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .bleed-amount {
+      font-size: 64px;
+      font-weight: 800;
+      letter-spacing: -3px;
+      line-height: 1;
+      background: linear-gradient(135deg, #ff6584, #ff9f43);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    .bleed-desc {
+      font-size: 15px;
+      color: var(--muted);
+    }
+    .bleed-desc span { color: var(--text); font-weight: 600; }
+    .bleed-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .bleed-stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .bleed-stat-value { font-size: 22px; font-weight: 700; }
+    .bleed-stat-value.green { color: var(--green); }
+    .bleed-stat-value.orange { color: var(--orange); }
+    .bleed-stat-value.red { color: var(--red); }
+    /* ── State Views ── */
+    .state-idle, .state-scanning, .state-empty { text-align: center; padding: 80px 20px; }
+    .state-icon { font-size: 48px; margin-bottom: 16px; }
+    .state-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .state-desc { font-size: 14px; color: var(--muted); margin-bottom: 28px; max-width: 360px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+    .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .scan-step { font-size: 13px; color: var(--muted); margin-top: 8px; }
+    /* ── Grid ── */
+    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .section-title { font-size: 14px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+    .section-count { font-size: 12px; background: var(--surface2); padding: 2px 10px; border-radius: 20px; color: var(--muted); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    /* ── Subscription Card ── */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: border-color 0.2s; }
+    .card:hover { border-color: var(--accent); }
+    .card.urgent { border-color: var(--red); }
+    .card.hike { border-color: var(--orange); }
+    .card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 14px; }
+    .vendor-info { display: flex; align-items: center; gap: 10px; }
+    .vendor-avatar { width: 36px; height: 36px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+    .vendor-name { font-size: 15px; font-weight: 600; }
+    .vendor-freq { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .badge { font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .badge-trial { background: rgba(255,71,87,0.15); color: var(--red); }
+    .badge-hike { background: rgba(255,159,67,0.15); color: var(--orange); }
+    .badge-normal { background: rgba(108,99,255,0.15); color: var(--accent); }
+    .card-amount { font-size: 26px; font-weight: 800; letter-spacing: -1px; margin-bottom: 12px; }
+    .card-meta { display: flex; gap: 16px; margin-bottom: 16px; }
+    .meta-item { font-size: 12px; color: var(--muted); }
+    .meta-item span { color: var(--text); font-weight: 500; }
+    .hike-banner { background: rgba(255,159,67,0.08); border: 1px solid rgba(255,159,67,0.2); border-radius: 8px; padding: 10px 12px; margin-bottom: 14px; font-size: 12px; color: var(--orange); line-height: 1.5; }
+    .card-actions { display: flex; gap: 8px; }
+    .card-btn { flex: 1; padding: 7px 12px; border-radius: 7px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text); transition: all 0.2s; }
+    .card-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .card-btn.danger:hover { border-color: var(--red); color: var(--red); }
+    .card-btn.success-flash { border-color: var(--green); color: var(--green); }
+    /* ── Toast ── */
+    .toast { position: fixed; bottom: 24px; right: 24px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 18px; font-size: 13px; max-width: 320px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); transform: translateY(80px); opacity: 0; transition: all 0.3s; z-index: 100; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast.green { border-color: var(--green); }
+    .toast.red { border-color: var(--red); }
+  </style>
+</head>
+<body>
+  <!-- ── Header ── -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-mark">💰</div>
+      <div>
+        <div class="logo-text">Recoup</div>
+        <div class="logo-sub">Powered by Anna</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <button class="btn btn-outline" id="btnClear" style="display:none" onclick="clearData()">Clear Data</button>
+      <button class="btn btn-primary" id="btnScan" onclick="startScan()">Scan My Gmail</button>
+    </div>
+  </header>
+
+  <!-- ── Main ── -->
+  <main class="main">
+
+    <!-- Idle state -->
+    <div class="state-idle" id="stateIdle">
+      <div class="state-icon">🔍</div>
+      <div class="state-title">Find your subscription leaks</div>
+      <div class="state-desc">Recoup scans your Gmail, finds every subscription and trial bleeding your wallet, and defends your calendar — automatically.</div>
+      <button class="btn btn-primary" style="font-size:15px; padding:12px 28px;" onclick="startScan()">
+        Scan My Gmail
+      </button>
+    </div>
+
+    <!-- Scanning state -->
+    <div class="state-scanning" id="stateScanning" style="display:none">
+      <div class="spinner"></div>
+      <div class="state-title">Recoup is working...</div>
+      <div class="scan-step" id="scanStep">Connecting to Gmail</div>
+    </div>
+
+    <!-- Results -->
+    <div id="stateResults" style="display:none">
+
+      <!-- Annual Bleed Hero -->
+      <div class="bleed-hero">
+        <div class="bleed-label">Annual Subscription Bleed</div>
+        <div class="bleed-amount" id="bleedAmount">$0</div>
+        <div class="bleed-desc" id="bleedDesc">Recoup found <span id="bleedCount">0</span> subscriptions draining your wallet</div>
+        <div class="bleed-stats">
+          <div>
+            <div class="bleed-stat-label">Monthly</div>
+            <div class="bleed-stat-value orange" id="statMonthly">$0</div>
+          </div>
+          <div>
+            <div class="bleed-stat-label">Urgent Trials</div>
+            <div class="bleed-stat-value red" id="statUrgent">0</div>
+          </div>
+          <div>
+            <div class="bleed-stat-label">Price Hikes</div>
+            <div class="bleed-stat-value orange" id="statHikes">0</div>
+          </div>
+          <div>
+            <div class="bleed-stat-label">Emails Scanned</div>
+            <div class="bleed-stat-value green" id="statScanned">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Urgent section -->
+      <div id="urgentSection" style="display:none; margin-bottom:28px;">
+        <div class="section-header">
+          <div class="section-title">⚠️ Urgent — Act Now</div>
+          <div class="section-count" id="urgentCount">0</div>
+        </div>
+        <div class="cards-grid" id="urgentGrid"></div>
+      </div>
+
+      <!-- All subscriptions -->
+      <div>
+        <div class="section-header">
+          <div class="section-title">All Subscriptions</div>
+          <div class="section-count" id="allCount">0</div>
+        </div>
+        <div class="cards-grid" id="allGrid"></div>
+      </div>
+
+      <!-- Protect all button -->
+      <div style="text-align:center; margin-top:32px; padding-bottom:40px;">
+        <button class="btn btn-primary" style="font-size:14px; padding:12px 32px;" onclick="protectAll()">
+          🛡️ Protect All — Add Calendar Alerts
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Empty state -->
+    <div class="state-empty" id="stateEmpty" style="display:none">
+      <div class="state-icon">✨</div>
+      <div class="state-title">No subscriptions found</div>
+      <div class="state-desc">Recoup didn't find any billing or subscription emails in the scanned period. Try increasing the scan window.</div>
+      <button class="btn btn-outline" onclick="startScan()">Scan Again</button>
+    </div>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script src="mock-sdk.js"></script>
+  <script>
+    // ── State ──────────────────────────────────────────────────────────────────
+    let currentResults = null;
+
+    // ── Anna Bridge ────────────────────────────────────────────────────────────
+    // In Anna runtime, window.anna.callTool() is injected by the platform.
+    // This bridge calls Anna's tool layer, which routes to our Executa plugins.
+    async function callTool(name, args = {}) {
+      if (window.anna?.tools?.invoke) {
+        const response = await window.anna.tools.invoke({ tool_id: "tool-dev-recoup", method: name, args });
+        if (response.success === false) throw new Error(response.error || "Tool call failed");
+        return response.data || response;
+      }
+      throw new Error("Anna SDK not available — mock-sdk.js may not have loaded");
+    }
+
+    // ── AI Classification ───────────────────────────────────────────────────────
+    // Calls Anna's host LLM directly from the UI. Falls back to deterministic
+    // classify_emails tool if llm.complete is unavailable.
+    async function classifyEmailsWithAI(emails) {
+      if (!window.anna?.llm?.complete) {
+        throw new Error("llm_unavailable");
+      }
+
+      const BATCH_SIZE = 5;
+      const subscriptions = [];
+
+      for (let i = 0; i < emails.length; i += BATCH_SIZE) {
+        const batch = emails.slice(i, i + BATCH_SIZE);
+        const batchText = batch.map((e, idx) =>
+          `[${idx}] From: ${e.from}\nSubject: ${e.subject}\nPreview: ${e.snippet}`
+        ).join("\n\n");
+
+        const prompt =
+          `Analyze these ${batch.length} emails. For each one, determine if it represents ` +
+          `a subscription, recurring billing, free trial, or SaaS payment.\n\n${batchText}\n\n` +
+          `Reply with ONLY a JSON array, one object per email in order, no explanation:\n` +
+          `[{"is_subscription": true/false, "vendor": "name or null", "amount": number or null, ` +
+          `"currency": "USD or null", "frequency": "monthly|annual|weekly|one-time or null", ` +
+          `"is_trial": true/false, "urgency": "high or normal"}]`;
+
+        try {
+          const reply = await window.anna.llm.complete({
+            messages: [{ role: "user", content: { type: "text", text: prompt } }],
+            maxTokens: 800,
+          });
+
+          const raw = reply.content?.text || "[]";
+          const cleaned = raw.trim().replace(/^```json/, "").replace(/```$/, "").trim();
+          const parsed = JSON.parse(cleaned);
+
+          parsed.forEach((p, idx) => {
+            if (p.is_subscription) {
+              subscriptions.push({
+                vendor: p.vendor || "Unknown Vendor",
+                amount: p.amount,
+                currency: p.currency || "USD",
+                frequency: p.frequency || "monthly",
+                is_trial: !!p.is_trial,
+                urgency: p.urgency || "normal",
+                needs_review: p.amount == null,
+                display_note: p.amount == null ? "AI detected activity \u2014 no amount found" : null,
+                message_id: batch[idx]?.message_id,
+                received_at: batch[idx]?.received_at,
+                classification_method: "ai",
+              });
+            }
+          });
+        } catch (e) {
+          console.warn("AI batch classification failed, will fall back:", e);
+          throw e;
+        }
+      }
+
+      const seen = {};
+      for (const sub of subscriptions) {
+        const key = sub.vendor.toLowerCase();
+        if (!seen[key] || (sub.received_at || "") > (seen[key].received_at || "")) {
+          seen[key] = sub;
+        }
+      }
+
+      return {
+        subscriptions: Object.values(seen),
+        total_classified: Object.keys(seen).length,
+        total_scanned: emails.length,
+        data_source: "ai_host_llm",
+      };
+    }
+
+    // ── Scan Flow ──────────────────────────────────────────────────────────────
+    async function startScan() {
+      showState("scanning");
+      setStep("Connecting to Gmail...");
+      document.getElementById("btnScan").disabled = true;
+
+      try {
+        setStep("Scanning emails for subscriptions...");
+        const scanResult = await callTool("scan_gmail_subscriptions", { days_back: 90, max_results: 100 });
+
+        setStep(`Classifying ${scanResult.count || 0} emails...`);
+        let classified;
+        try {
+          classified = await classifyEmailsWithAI(scanResult.emails || []);
+          showToast("\u2728 Classified using Anna's AI", "");
+        } catch (e) {
+          classified = await callTool("classify_emails", { emails: scanResult.emails || [] });
+          showToast("\u2139\ufe0f AI unavailable \u2014 used deterministic classifier", "");
+        }
+
+        setStep("Calculating your annual bleed...");
+        const bleed = await callTool("calculate_bleed", {
+          subscriptions: classified.subscriptions || []
+        });
+
+        setStep("Saving results...");
+        await callTool("save_subscriptions", {
+          subscriptions: classified.subscriptions || [],
+          annual_bleed: bleed.annual_bleed || 0
+        });
+
+        const merged = {
+          ...bleed,
+          subscriptions: classified.subscriptions || [],
+          high_urgency: (classified.subscriptions || []).filter(s => s.urgency === "high"),
+          price_hikes: []
+        };
+
+        currentResults = { scan: scanResult, analysis: merged };
+        renderResults(merged, scanResult.count || 0);
+
+      } catch (e) {
+        showState("idle");
+        showToast("❌ Scan failed: " + e.message, "red");
+      } finally {
+        document.getElementById("btnScan").disabled = false;
+      }
+    }
+
+    // ── Render Results ─────────────────────────────────────────────────────────
+    function renderResults(analysis, scannedCount) {
+      const subs = analysis.subscriptions || [];
+
+      if (subs.length === 0) {
+        showState("empty");
+        return;
+      }
+
+      // Hero stats
+      document.getElementById("bleedAmount").textContent = "$" + (analysis.annual_bleed || 0).toLocaleString("en-US", { minimumFractionDigits: 2 });
+      document.getElementById("bleedCount").textContent = subs.length;
+      document.getElementById("statMonthly").textContent = "$" + ((analysis.annual_bleed || 0) / 12).toFixed(2);
+      document.getElementById("statUrgent").textContent = (analysis.high_urgency || []).length;
+      document.getElementById("statHikes").textContent = (analysis.price_hikes || []).length;
+      document.getElementById("statScanned").textContent = scannedCount;
+
+      // Urgent section
+      const urgent = subs.filter(s => s.urgency === "high");
+      if (urgent.length > 0) {
+        document.getElementById("urgentSection").style.display = "block";
+        document.getElementById("urgentCount").textContent = urgent.length;
+        document.getElementById("urgentGrid").innerHTML = urgent.map(renderCard).join("");
+      }
+
+      // All subscriptions
+      document.getElementById("allCount").textContent = subs.length;
+      document.getElementById("allGrid").innerHTML = subs.map(renderCard).join("");
+
+      document.getElementById("btnClear").style.display = "block";
+      showState("results");
+    }
+
+    function renderCard(sub) {
+      const isUrgent = sub.urgency === "high";
+      const hasHike = sub.price_analysis?.price_change_detected;
+      const initial = (sub.vendor || "?")[0].toUpperCase();
+      const badgeClass = isUrgent ? "badge-trial" : hasHike ? "badge-hike" : "badge-normal";
+      const badgeText = isUrgent ? "Trial Ending" : hasHike ? "Price Hike" : sub.frequency || "monthly";
+      const cardClass = isUrgent ? "urgent" : hasHike ? "hike" : "";
+      const billingDate = sub.trial_end_date || sub.next_billing_date || "Unknown";
+
+      return `
+        <div class="card ${cardClass}">
+          <div class="card-top">
+            <div class="vendor-info">
+              <div class="vendor-avatar">${initial}</div>
+              <div>
+                <div class="vendor-name">${sub.vendor || "Unknown"}</div>
+                <div class="vendor-freq">${sub.frequency || "monthly"}</div>
+              </div>
+            </div>
+            <span class="badge ${badgeClass}">${badgeText}</span>
+          </div>
+
+          <div class="card-amount">${sub.needs_review ? "—" : `${sub.currency || "USD"} ${(sub.amount || 0).toFixed(2)}`}</div>
+          ${sub.needs_review ? `<div class="hike-banner" style="border-color:#444;color:#999;background:rgba(255,255,255,0.03);">ℹ️ ${sub.display_note}</div>` : ""}
+
+          <div class="card-meta">
+            <div class="meta-item">Next billing <span>${billingDate}</span></div>
+            <div class="meta-item">Annual <span>$${((sub.amount || 0) * (sub.frequency === "annual" ? 1 : 12)).toFixed(2)}</span></div>
+          </div>
+
+          ${hasHike ? `
+            <div class="hike-banner">
+              📈 ${sub.price_analysis.alert_message || "Price increase detected"}
+              (+${sub.price_analysis.change_percentage?.toFixed(1)}%)
+            </div>
+          ` : ``}
+
+          <div class="card-actions">
+            <button class="card-btn" onclick="addAlert('${sub.vendor}', ${sub.amount}, '${billingDate}', ${isUrgent}, '${sub.frequency || "monthly"}', this)">
+              🛡️ Alert Me
+            </button>
+            <button class="card-btn danger" onclick="draftCancel('${sub.vendor}', ${sub.amount})">
+              ✉️ Cancel Draft
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    // ── Actions ────────────────────────────────────────────────────────────────
+    async function addAlert(vendor, amount, billingDate, isTrial, frequency, btn) {
+      btn.disabled = true;
+      btn.textContent = "Adding...";
+      try {
+        await callTool("create_billing_alert", {
+          vendor, amount, billing_date: billingDate,
+          is_trial: isTrial, frequency, currency: "USD"
+        });
+        btn.textContent = "✅ Added";
+        btn.classList.add("success-flash");
+        showToast(`🛡️ Calendar alert set for ${vendor}`, "green");
+      } catch (e) {
+        btn.textContent = "🛡️ Alert Me";
+        btn.disabled = false;
+        showToast("Failed to create alert", "red");
+      }
+    }
+
+    async function protectAll() {
+      if (!currentResults?.analysis?.subscriptions) return;
+      try {
+        const result = await callTool("create_bulk_alerts", {
+          subscriptions: currentResults.analysis.subscriptions
+        });
+        showToast(`🛡️ ${result.created} Calendar alerts created successfully`, "green");
+      } catch (e) {
+        showToast("Failed to create alerts: " + e.message, "red");
+      }
+    }
+
+    function draftCancel(vendor, amount) {
+      const subject = encodeURIComponent(`Cancel my subscription — ${vendor}`);
+      const body = encodeURIComponent(
+        `Hi,\n\nI'd like to cancel my ${vendor} subscription effective immediately.\n\nPlease confirm once cancelled and ensure no further charges are made.\n\nThank you`
+      );
+      window.open(`https://mail.google.com/mail/?view=cm&su=${subject}&body=${body}`, "_blank");
+    }
+
+    async function clearData() {
+      await callTool("clear_subscriptions");
+      currentResults = null;
+      document.getElementById("btnClear").style.display = "none";
+      showState("idle");
+      showToast("Subscription history cleared", "");
+    }
+
+    // ── Helpers ────────────────────────────────────────────────────────────────
+    function showState(state) {
+      ["idle", "scanning", "results", "empty"].forEach(s => {
+        document.getElementById(`state${s.charAt(0).toUpperCase() + s.slice(1)}`).style.display =
+          s === state ? "block" : "none";
+      });
+    }
+
+    function setStep(text) {
+      document.getElementById("scanStep").textContent = text;
+    }
+
+    function showToast(msg, type = "") {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.className = `toast ${type} show`;
+      setTimeout(() => t.classList.remove("show"), 3500);
+    }
+  </script>
+</body>
+</html>

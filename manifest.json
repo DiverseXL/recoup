@@ -1,0 +1,75 @@
+{
+  "schema": 2,
+  "permissions": [
+    "tools.invoke",
+    "chat.write_message",
+    "storage.read",
+    "storage.write",
+    "ui.svg"
+  ],
+  "required_executas": [
+    {
+      "tool_id": "bundled:recoup-tool",
+      "min_version": "1.0.0",
+      "version": "latest"
+    },
+    {
+      "tool_id": "bundled:recoup-playbook",
+      "version": "latest"
+    }
+  ],
+  "optional_executas": [],
+  "system_prompt_addendum": "The user has Recoup open. You are their AI subscription defender. When they type #recoup or ask about subscriptions, billing, trials, or money leaks: call scan_gmail_subscriptions to read their Gmail, call analyze_emails to classify results, call calculate_bleed for the annual cost total, call save_subscriptions to persist history, call create_bulk_alerts to defend their Calendar. Never skip the scan step. Always lead with the annual bleed number. Offer cancellation drafts for any unwanted subscription.",
+  "tags": [
+    "finance",
+    "productivity",
+    "gmail",
+    "subscriptions",
+    "billing",
+    "automation"
+  ],
+  "ui": {
+    "bundle": {
+      "format": "static-spa",
+      "entry": "index.html",
+      "external_origins": []
+    },
+    "views": [
+      {
+        "name": "main",
+        "title": "Recoup",
+        "default": true,
+        "entry": "index.html",
+        "min_size": { "w": 380, "h": 560 },
+        "default_size": { "w": 560, "h": 760 },
+        "max_size": { "w": 900, "h": 1100 },
+        "resizable": true,
+        "movable": true,
+        "single_instance": true,
+        "icon": "logo.png"
+      }
+    ],
+    "host_api": {
+      "tools": ["required:bundled:recoup-tool"],
+      "chat": ["write_message"],
+      "artifact": [],
+      "llm": ["complete"],
+      "fs": [],
+      "storage": ["get", "set"],
+      "prefs": [],
+      "window": ["set_title"]
+    },
+    "csp_overrides": {
+      "img-src": ["'self'", "data:", "blob:"],
+      "font-src": ["'self'", "data:", "https://fonts.gstatic.com"],
+      "style-src": ["'self'", "'unsafe-inline'"],
+      "script-src": ["'self'", "'unsafe-inline'"]
+    },
+    "state_merge": "last_writer_wins"
+  },
+  "dev": {
+    "fixtures": ["fixtures/*.jsonl"],
+    "seed_storage": {},
+    "user_id": 1
+  }
+}
