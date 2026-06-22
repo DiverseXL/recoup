@@ -201,6 +201,19 @@ async function main() {
     await anna.window.set_title({ title: "Recoup — Subscription Killer" });
     setStatus("ready", "Connected to Anna");
     log("Anna runtime connected.", "ok");
+
+    // Diagnostic logging
+    try {
+      log(`window.__ANNA_TOOL_IDS__: ${JSON.stringify(window.__ANNA_TOOL_IDS__ || null)}`, "info");
+      if (anna.tools?.list) {
+        const listRes = await anna.tools.list();
+        log(`tools.list() returned: ${JSON.stringify(listRes)}`, "ok");
+      } else {
+        log("anna.tools.list is not defined", "err");
+      }
+    } catch (err) {
+      log(`Diagnostics failed: ${err.message}`, "err");
+    }
   } catch (_) {
     setStatus("ready", "Standalone preview");
     log("Running in standalone preview (no Anna host). Demo data will be used.", "info");

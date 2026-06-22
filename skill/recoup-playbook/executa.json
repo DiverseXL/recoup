@@ -1,6 +1,7 @@
 {
   "slug": "recoup-playbook",
   "name": "Recoup Playbook",
+  "tool_id": "skill-mccloned-recoup-playbook-buzegn37",
   "version": "1.0.0",
   "executa_type": "skill",
   "description": "Orchestration playbook for the Recoup subscription scanning workflow.",
